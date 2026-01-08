@@ -1,25 +1,26 @@
 package com.liufan.learn;
 
 /**
- * 在 Java 中，变量分为两种：
+ * 变量
+ * <p>
+ * 在 Java 中分为两种：
  * <ol>
  *     <li>基本数据类型的变量</li>
  *     <li>引用类型的变量</li>
  * </ol>
+ * @see BasicData
+ * @see ClassReference
  */
-class LearnVar {
+class Variable {
 
-    /**
-     * 基本数据类型变量练习
-     */
     static void practice() {
-        // int n; // 不写初始值，就相当于给它指定了默认值。默认值总是 0。
+        // int n;    // 不写初始值，就相当于给它指定了默认值。默认值总是 0。
         int n = 100; // 整型 int 类型的变量，名称为 n，初始值为 100。
         System.out.println("n = " + n);
-        n = 200; // 变量可以重新赋值。此时变量 n 已经存在了，不能再重复定义，因此不能指定变量类型 int
+        n = 200;     // 变量可以重新赋值。此时变量 n 已经存在了，不能再重复定义，因此不能指定变量类型 int
         System.out.println("n = " + n);
 
-        int x = n; // 变量还可以赋值给其他变量。
+        int x = n;   // 变量还可以赋值给其他变量。
         System.out.println("x = " + x);
 
         x = x + 100;
@@ -62,5 +63,30 @@ class LearnVar {
         └───┴───┴───┴───┴───┴───┴───┘
         ⚠️注意，等号 = 是赋值语句，不是数学意义上的相等，否则无法解释 x = x + 100。
         */
+    }
+
+    /**
+     * 常量
+     * <p>
+     * 定义变量的时候，如果加上 final 修饰符，这个变量就变成了常量
+     */
+    static void finalPractice() {
+        // 常量的作用是用有意义的变量名来避免魔术数字（Magic number），例如不要在代码中到处写 3.14，而是定义一个常量。
+        // 如果将来需要提高计算精度，我们只需要在常量的定义处修改，例如改成 3.1416，而不必在所有地方替换 3.14。
+        final double PI = 3.14; // PI 是一个常量
+        double r = 5.0;
+        double area = PI * r * r;
+        System.out.println(area);
+        // PI = 3.1416; // 报错：常量不能重新赋值
+    }
+
+    /**
+     * var 关键字
+     * <p>
+     * 有时，类的名字太长，写起来比较麻烦，这个时候，如果想省略变量类型，可以使用 var 关键字。
+     */
+    static void varPractice() {
+        // StringBuilder sb = new StringBuilder();
+        // var sb = new StringBuilder(); // 编译器会根据赋值语句自动推断出变量 sb 的类型是 StringBuilder
     }
 }

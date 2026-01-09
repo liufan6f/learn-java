@@ -1,4 +1,4 @@
-package com.liufan.learn;
+package com.liufan.learn.basicdata;
 
 /**
  * 布尔类型
@@ -8,11 +8,11 @@ package com.liufan.learn;
  *     <li>true</li>
  *     <li>false，默认值</li>
  * </ul>
- * @see BasicDataBoolean.Arithmetic
+ * @see LearnBoolean.Arithmetic
  */
-class BasicDataBoolean extends BasicData {
+public class LearnBoolean extends BasicData {
 
-    static void practice() {
+    public static void practice() {
         boolean b1 = true;
         boolean b2 = false;
         System.out.println(b1);
@@ -41,14 +41,14 @@ class BasicDataBoolean extends BasicData {
      *     <li>||</li>
      * </ol>
      */
-    static class Arithmetic {
+    public static class Arithmetic {
 
         /**
          * 布尔运算
          * <p>
          * 布尔运算的一个重要特点是短路运算。如果一个布尔运算的表达式能提前确定结果，则后续的计算不再执行，直接返回结果。
          */
-        static void practice() {
+        public static void practice() {
             // 因为 false && x 的结果总是 false，无论 x 是 true 还是 false，因此与运算在确定第一个值为 false 后，
             // 不再继续计算，而是直接返回 false。
 //            boolean b = 5 < 3;
@@ -62,7 +62,7 @@ class BasicDataBoolean extends BasicData {
          * <p>
          * 三元运算也是“短路运算”，根据 b 的值只计算 x 或 y。
          */
-        static void ternaryOperation() {
+        public static void ternaryOperation() {
             // 注意到三元运算 b ? x : y 会首先计算 b，如果 b 为 true，则只计算 x，否则只计算 y。
             // 此外 x 和 y 的类型必须相同，因为返回值不是 boolean ，而是 x 和 y 之一。
 //            int n = -100;

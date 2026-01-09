@@ -1,4 +1,4 @@
-package com.liufan.learn;
+package com.liufan.learn.basicdata;
 
 /**
  * 基本数据类型
@@ -10,14 +10,14 @@ package com.liufan.learn;
  *     <li>字符类型：char</li>
  *     <li>布尔类型：boolean</li>
  * </ul>
- * @see BasicDataInteger
- * @see BasicDataFloat
- * @see BasicDataBoolean
- * @see BasicDataChar
+ * @see LearnInteger
+ * @see LearnFloat
+ * @see LearnBoolean
+ * @see LearnChar
  */
-class BasicData {
+public class BasicData {
 
-    static void learn() {
+    public static void learn() {
         /*
         Java 定义的这些基本数据类型有什么区别呢？要了解这些区别，我们就必须简单了解一下计算机内存的基本结构。
 

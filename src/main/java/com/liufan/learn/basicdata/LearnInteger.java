@@ -1,4 +1,4 @@
-package com.liufan.learn;
+package com.liufan.learn.basicdata;
 
 /**
  * 整型（整数类型）
@@ -13,11 +13,11 @@ package com.liufan.learn;
  * <i>
  *     n 代表字节数，最大范围计算公式：-2的(n*8-1)次方 ~ 2的(n*8-1)次方-1
  * </i>
- * @see BasicDataInteger.Arithmetic
+ * @see LearnInteger.Arithmetic
  */
-class BasicDataInteger extends BasicData {
+public class LearnInteger extends BasicData {
 
-    static void practice() {
+    public static void practice() {
         int i = 2_000_000_000;
         int i2 = -2_000_000_000;        // 加下划线更容易识别
         int i3 = 0b1000000000;          // 二进制表示的 512
@@ -40,14 +40,14 @@ class BasicDataInteger extends BasicData {
      *     <li>整数的数值是精确的，整数运算也是精确的，即使是除法也是精确的，因为两个整数相除只能得到结果的整数部分；</li>
      *     <li>整数存在范围限制，如果计算应该选择合适范围的整型（int 或 long），没有必要为了节省内存而使用 byte 和 short。</li>
      * </ul>
-     * @see BasicDataInteger.Arithmetic#numericOverflow()
+     * @see LearnInteger.Arithmetic#numericOverflow()
      */
-    static class Arithmetic {
+    public static class Arithmetic {
 
         /**
          * 四则运算
          */
-        static void fourFundamentalRules() {
+        public static void fourFundamentalRules() {
             // Java 的整数运算遵循四则运算规则，可以使用任意嵌套的小括号。四则运算规则和初等数学一致。
             int i = (100 + 200) * (99 - 88); // 3300
             int n = 7 * (5 + (i - 9));       // 23072
@@ -89,7 +89,7 @@ class BasicDataInteger extends BasicData {
          * <p>
          * 整数存在范围限制，如果计算结果超出了范围，就会产生溢出，而溢出不会报错，却会得到一个奇怪的结果。
          */
-        static void numericOverflow() {
+        public static void numericOverflow() {
             int x = 2147483640;
             int y = 15;
             int sum = x + y;
@@ -117,7 +117,7 @@ class BasicDataInteger extends BasicData {
          * <p>
          * 对 byte 和 short 类型进行移位时，会首先转换为 int 再进行位移。
          */
-        static void shiftOperation() {
+        public static void shiftOperation() {
             // 左移，实际上就是不断地 ×2
             // 在计算机中，整数总是以二进制的形式表示。例如，int 类型的整数 7 使用 4 字节表示的二进制如下
             int n = 7;       // 00000000 00000000 00000000 00000111 = 7
@@ -198,7 +198,7 @@ class BasicDataInteger extends BasicData {
          *     <li>异或运算 ^，两个数不同时为 1，否则为 0</li>
          * </ul>
          */
-        static void bitOperation() {
+        public static void bitOperation() {
             // Java 没有单个 bit 的数据类型。在 Java 中，对两个整数进行位运算，实际上就是按位对齐，然后依次对每一位进行运算。
             /*
             与运算，简易示例：
@@ -257,7 +257,7 @@ class BasicDataInteger extends BasicData {
          * </ol>
          * 记不住也没关系，只需要加括号就可以保证运算的优先级正确。
          */
-        static void operationalPriority() {
+        public static void operationalPriority() {
             System.out.println("此方法无执行内容，通过注释了解即可");
         }
 
@@ -266,7 +266,7 @@ class BasicDataInteger extends BasicData {
          * <p>
          * 在运算过程中，如果参与运算的两个数类型不一致，那么计算结果为较大类型的整型。
          */
-        static void typePromotionAndCoercion() {
+        public static void typePromotionAndCoercion() {
             // 例如，short 和 int 计算，结果总是 int，原因是 short 首先自动被转型为 int
             short s = 1234;
             int i = 12345;

@@ -1,5 +1,11 @@
 package com.liufan.learn;
 
+import com.liufan.learn.basicdata.BasicData;
+import com.liufan.learn.basicdata.LearnBoolean;
+import com.liufan.learn.basicdata.LearnChar;
+import com.liufan.learn.basicdata.LearnFloat;
+import com.liufan.learn.basicdata.LearnInteger;
+
 /**
  * Java 规定
  * <p>
@@ -18,30 +24,30 @@ public class Main {
 	public static void main(String[] args) {
         System.out.println("Hello, world! 你好，世界！");
 
-//        Variable.practice();      // 01、变量
-//        Variable.finalPractice(); // 01.1、常量
-//        Variable.varPractice();   // 01.2、var 关键字
+        Variable.practice();      // 01、变量
+        Variable.finalPractice(); // 01.1、常量
+        Variable.varPractice();   // 01.2、var 关键字
 
-//        BasicData.learn();                                               // 02、基本数据类型
-//        BasicDataInteger.practice();                                     // 02.1、整型
-//        BasicDataInteger.Arithmetic.fourFundamentalRules();              // 02.1.1、四则运算
-//        BasicDataInteger.Arithmetic.numericOverflow();                   // 02.1.2、数值溢出
-//        BasicDataInteger.Arithmetic.shiftOperation();                    // 02.1.3、移位运算
-//        BasicDataInteger.Arithmetic.bitOperation();                      // 02.1.4、位运算
-//        BasicDataInteger.Arithmetic.operationalPriority();               // 02.1.5、运算优先级
-//        BasicDataInteger.Arithmetic.typePromotionAndCoercion();          // 02.1.6、类型提升与强制转型
+        BasicData.learn();                                               // 02、基本数据类型
+        LearnInteger.practice();                                     // 02.1、整型
+        LearnInteger.Arithmetic.fourFundamentalRules();              // 02.1.1、四则运算
+        LearnInteger.Arithmetic.numericOverflow();                   // 02.1.2、数值溢出
+        LearnInteger.Arithmetic.shiftOperation();                    // 02.1.3、移位运算
+        LearnInteger.Arithmetic.bitOperation();                      // 02.1.4、位运算
+        LearnInteger.Arithmetic.operationalPriority();               // 02.1.5、运算优先级
+        LearnInteger.Arithmetic.typePromotionAndCoercion();          // 02.1.6、类型提升与强制转型
 
-//        BasicDataFloat.practice();                                       // 02.2、浮点型
-//        BasicDataFloat.Arithmetic.fourFundamentalRules();                // 02.2.1、四则运算
-//        BasicDataFloat.Arithmetic.floatEqualsExample();                  // 02.2.2、浮点数比较
-//        BasicDataFloat.Arithmetic.typePromotion();                       // 02.2.3、类型提升
-//        BasicDataFloat.Arithmetic.numericOverflow();                     // 02.2.4、数值溢出
-//        BasicDataFloat.Arithmetic.typePromotionCoercion();               // 02.2.5、强制转型
+        LearnFloat.practice();                                       // 02.2、浮点型
+        LearnFloat.Arithmetic.fourFundamentalRules();                // 02.2.1、四则运算
+        LearnFloat.Arithmetic.floatEqualsExample();                  // 02.2.2、浮点数比较
+        LearnFloat.Arithmetic.typePromotion();                       // 02.2.3、类型提升
+        LearnFloat.Arithmetic.numericOverflow();                     // 02.2.4、数值溢出
+        LearnFloat.Arithmetic.typePromotionCoercion();               // 02.2.5、强制转型
 
-//        BasicDataBoolean.practice();                                     // 02.3、布尔型
-//        BasicDataBoolean.Arithmetic.practice();                          // 02.3.1、短路运算
-//        BasicDataBoolean.Arithmetic.ternaryOperation();                  // 02.3.2、三元运算
+        LearnBoolean.practice();                                     // 02.3、布尔型
+        LearnBoolean.Arithmetic.practice();                          // 02.3.1、短路运算
+        LearnBoolean.Arithmetic.ternaryOperation();                  // 02.3.2、三元运算
 
-        BasicDataChar.practice();                                        // 02.4、字符类型
+        LearnChar.practice();                                        // 02.4、字符类型
 	}
 }

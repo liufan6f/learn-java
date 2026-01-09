@@ -1,5 +1,8 @@
 package com.liufan.learn;
 
+import com.liufan.learn.basicdata.BasicData;
+import com.liufan.learn.classtype.LearnClass;
+
 /**
  * 变量
  * <p>
@@ -9,7 +12,7 @@ package com.liufan.learn;
  *     <li>引用类型的变量</li>
  * </ol>
  * @see BasicData
- * @see ClassReference
+ * @see LearnClass
  */
 class Variable {
 
@@ -86,7 +89,8 @@ class Variable {
      * 有时，类的名字太长，写起来比较麻烦，这个时候，如果想省略变量类型，可以使用 var 关键字。
      */
     static void varPractice() {
-        // StringBuilder sb = new StringBuilder();
-        // var sb = new StringBuilder(); // 编译器会根据赋值语句自动推断出变量 sb 的类型是 StringBuilder
+//        StringBuilder sb = new StringBuilder();
+//        var sb = new StringBuilder(); // 编译器会根据赋值语句自动推断出变量 sb 的类型是 StringBuilder
+        System.out.println("var 关键字用来替换一些名字长的类");
     }
 }

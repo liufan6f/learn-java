@@ -1,14 +1,5 @@
 package com.liufan.learn;
 
-import com.liufan.learn.basicdata.BasicData;
-import com.liufan.learn.basicdata.LearnBoolean;
-import com.liufan.learn.basicdata.LearnChar;
-import com.liufan.learn.basicdata.LearnFloat;
-import com.liufan.learn.basicdata.LearnInteger;
-import com.liufan.learn.classtype.LearnArray;
-import com.liufan.learn.classtype.LearnClass;
-import com.liufan.learn.classtype.LearnString;
-
 /**
  * Java 规定
  * <p>
@@ -58,6 +49,8 @@ public class Main {
 
 //        LearnArray.practice();             // 03.2、数组
 //        LearnArray.immutableProperty();    // 03.2.1、数组大小不可变（数组变量的指向）
-        LearnArray.stringArray();          // 03.2.2、字符串数组（引用类型数组）
+//        LearnArray.stringArray();          // 03.2.2、字符串数组（引用类型数组）
+
+        ScannerPrint.print(); // 输入和输出
 	}
 }

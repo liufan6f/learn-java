@@ -1,7 +1,7 @@
 package com.liufan.learn.basicdata;
 
 /**
- * 基本数据类型
+ * 基本数据类型（值类型）
  * <p>
  * 是 CPU 可以直接进行运算的类型。Java 中有 4 类基本数据类型：
  * <ul>

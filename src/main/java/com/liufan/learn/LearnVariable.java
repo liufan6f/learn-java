@@ -5,16 +5,21 @@ package com.liufan.learn;
  * <p>
  * 在 Java 中分为两种：
  * <ol>
- *     <li>基本数据类型的变量，变量是“持有”某个数值；</li>
+ *     <li>基本数据类型（值类型）的变量，变量是“持有”某个数值；</li>
  *     <li>引用类型的变量，变量是“指向”某个对象，它也可以指向一个空值 <code>null</code>，表示不存在，不指向任何对象。</li>
  * </ol>
  * @see com.liufan.learn.basicdata.BasicData
  * @see com.liufan.learn.classtype.LearnClass
- * @see com.liufan.learn.classtype.LearnString#immutableProperty()
  */
-class Variable {
+public class LearnVariable {
 
-    static void practice() {
+    /**
+     * 基本数据类型的变量“持有”某个数值；引用类型的变量“指向”某个对象
+     * @see com.liufan.learn.classtype.LearnString#immutableProperty()
+     * @see com.liufan.learn.classtype.LearnArray#immutableProperty()
+     * @see com.liufan.learn.classtype.LearnArray#stringArray()
+     */
+    public static void practice() {
         // int n;    // 不写初始值，就相当于给它指定了默认值。默认值总是 0。
         int n = 100; // 整型 int 类型的变量，名称为 n，初始值为 100。
         System.out.println("n = " + n);
@@ -71,7 +76,7 @@ class Variable {
      * <p>
      * 定义变量的时候，如果加上 final 修饰符，这个变量就变成了常量
      */
-    static void finalPractice() {
+    public static void finalPractice() {
         // 常量的作用是用有意义的变量名来避免魔术数字（Magic number），例如不要在代码中到处写 3.14，而是定义一个常量。
         // 如果将来需要提高计算精度，我们只需要在常量的定义处修改，例如改成 3.1416，而不必在所有地方替换 3.14。
         final double PI = 3.14; // PI 是一个常量
@@ -86,7 +91,7 @@ class Variable {
      * <p>
      * 有时，类的名字太长，写起来比较麻烦，这个时候，如果想省略变量类型，可以使用 var 关键字。
      */
-    static void varPractice() {
+   public static void varPractice() {
 //        StringBuilder sb = new StringBuilder();
 //        var sb = new StringBuilder(); // 编译器会根据赋值语句自动推断出变量 sb 的类型是 StringBuilder
         System.out.println("var 关键字用来替换一些名字长的类");

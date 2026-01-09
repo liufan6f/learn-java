@@ -8,7 +8,7 @@ package com.liufan.learn.basicdata;
  * 而 double 类型可最大表示1.79x10³⁰⁸。
  * <p>
  * 浮点数虽然表示的范围大，但是，浮点数有个非常重要的特点，就是浮点数常常无法精确表示。
- * @see LearnFloat.Arithmetic#fourFundamentalRules()
+ * @see Arithmetic#fourFundamentalRules()
  */
 public class LearnFloat extends BasicData {
 
@@ -45,7 +45,7 @@ public class LearnFloat extends BasicData {
          * 浮点数虽然表示的范围大，但是，浮点数有个非常重要的特点，就是浮点数常常无法精确表示。
          * <p>
          * 那么该如何判断两个浮点数是否相等呢？
-         * @see LearnFloat.Arithmetic#floatEquals(Double, Double)
+         * @see #floatEqualsExample()
          */
         public static void fourFundamentalRules() {
             /*
@@ -74,7 +74,7 @@ public class LearnFloat extends BasicData {
          * <p>
          * 由于浮点数存在运算误差，所以比较两个浮点数是否相等常常会出现错误的结果。
          * 正确的比较方法是判断两个浮点数之差的绝对值是否小于一个很小的数。
-         * @see LearnFloat.Arithmetic#floatEquals(Double, Double)
+         * @see #floatEquals(Double, Double)
          */
         public static void floatEqualsExample() {
             double x = 1.0 / 10;
@@ -107,7 +107,7 @@ public class LearnFloat extends BasicData {
          *     <li>Infinity：正无穷大</li>
          *     <li>-Infinity：负无穷大</li>
          * </ul>
-         * @see LearnInteger.Arithmetic#fourFundamentalRules()
+         * @see #fourFundamentalRules()
          */
         public static void numericOverflow() {
 //            double d1 = 0.0 / 0; // NaN

@@ -13,7 +13,7 @@ package com.liufan.learn.basicdata;
  * <i>
  *     n 代表字节数，最大范围计算公式：-2的(n*8-1)次方 ~ 2的(n*8-1)次方-1
  * </i>
- * @see LearnInteger.Arithmetic
+ * @see Arithmetic
  */
 public class LearnInteger extends BasicData {
 
@@ -40,7 +40,7 @@ public class LearnInteger extends BasicData {
      *     <li>整数的数值是精确的，整数运算也是精确的，即使是除法也是精确的，因为两个整数相除只能得到结果的整数部分；</li>
      *     <li>整数存在范围限制，如果计算应该选择合适范围的整型（int 或 long），没有必要为了节省内存而使用 byte 和 short。</li>
      * </ul>
-     * @see LearnInteger.Arithmetic#numericOverflow()
+     * @see #numericOverflow()
      */
     public static class Arithmetic {
 

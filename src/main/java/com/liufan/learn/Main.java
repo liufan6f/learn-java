@@ -1,5 +1,18 @@
 package com.liufan.learn;
 
+//import com.liufan.learn.basicdata.BasicData; // import 是导入某个类的语句，必须放到 Java 源代码的开头
+//import com.liufan.learn.basicdata.LearnInteger;
+//import com.liufan.learn.basicdata.LearnFloat;
+//import com.liufan.learn.basicdata.LearnBoolean;
+//import com.liufan.learn.basicdata.LearnChar;
+//import com.liufan.learn.classtype.LearnClass;
+//import com.liufan.learn.classtype.LearnString;
+//import com.liufan.learn.classtype.LearnArray;
+//import com.liufan.learn.processcontrol.LearnIf;
+//import com.liufan.learn.processcontrol.LearnSwitchCase;
+//import com.liufan.learn.processcontrol.LearnWhile;
+//import com.liufan.learn.processcontrol.LearnDoWhile;
+
 /**
  * Java 规定
  * <p>
@@ -18,9 +31,9 @@ public class Main {
 	public static void main(String[] args) {
         System.out.println("Hello, world! 你好，世界！");
 
-//        Variable.practice();      // 01、变量
-//        Variable.finalPractice(); // 01.1、常量
-//        Variable.varPractice();   // 01.2、var 关键字
+//        LearnVariable.practice();      // 01、变量
+//        LearnVariable.finalPractice(); // 01.1、常量
+//        LearnVariable.varPractice();   // 01.2、var 关键字
 
 //        BasicData.learn();                                  // 02、基本数据类型
 //        LearnInteger.practice();                            // 02.1、整型
@@ -42,15 +55,26 @@ public class Main {
 //        LearnChar.practice();                               // 02.4、字符类型
 
 //        LearnClass.pracice();            // 03、引用类型
+//        LearnClass.equals();             // 03.0.1、判断引用类型相等
 //        LearnString.practice();          // 03.1、字符串
 //        LearnString.stringPlus();        // 03.1.1、字符串连接
 //        LearnString.multilineString();   // 03.1.2、多行字符串
 //        LearnString.immutableProperty(); // 03.1.3、字符串不可变（引用类型变量的指向）
+//        LearnArray.practice();           // 03.2、数组
+//        LearnArray.immutableProperty();  // 03.2.1、数组大小不可变（数组变量的指向）
+//        LearnArray.stringArray();        // 03.2.2、字符串数组（引用类型数组）
 
-//        LearnArray.practice();             // 03.2、数组
-//        LearnArray.immutableProperty();    // 03.2.1、数组大小不可变（数组变量的指向）
-//        LearnArray.stringArray();          // 03.2.2、字符串数组（引用类型数组）
+//        LearnIf.ifPractice(50);                  // 04、流程控制
+//        LearnIf.elseIfPractice(100);             // 04.1、if 条件判断
+//        LearnSwitchCase.practice(1, "apple");    // 04.2、switch case 条件判断（多重选择）
+//        LearnSwitchCase.practiceJava12("apple"); // 04.2.1、switch case 条件判断（模式匹配）
+//        LearnSwitchCase.practiceReturn("apple"); // 04.2.2、switch case 返回值
+//        LearnWhile.practice();                   // 05、while 循环
+//        LearnDoWhile.practice();                 // 06、do while 循环
+        // TODO
 
-        ScannerPrint.print(); // 输入和输出
+        // 暂未编号分类
+//        ScannerPrint.print();   // 输出
+//        ScannerPrint.scanner(); // 输入
 	}
 }

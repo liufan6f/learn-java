@@ -1,5 +1,7 @@
 package com.liufan.learn;
 
+import java.util.Scanner;
+
 /**
  * 输入和输出
  */
@@ -44,6 +46,11 @@ public class ScannerPrint {
      * 输入
      */
     public static void scanner() {
-        // TODO
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Input your name: ");
+        String name = scanner.nextLine(); // 读取一行输入并获取字符串
+        System.out.print("Input your age: ");
+        int age = scanner.nextInt();      // Scanner 会自动转换数据类型，因此不必手动转换。
+        System.out.printf("Hi, %s, you are %d\n", name, age);
     }
 }

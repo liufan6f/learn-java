@@ -11,7 +11,8 @@ package com.liufan.learn;
 //import com.liufan.learn.processcontrol.LearnIf;
 //import com.liufan.learn.processcontrol.LearnSwitchCase;
 //import com.liufan.learn.processcontrol.LearnWhile;
-//import com.liufan.learn.processcontrol.LearnDoWhile;
+//import com.liufan.learn.processcontrol.LearnFor;
+import com.liufan.learn.processcontrol.Loop;
 
 /**
  * Java 规定
@@ -69,9 +70,13 @@ public class Main {
 //        LearnSwitchCase.practice(1, "apple");    // 04.2、switch case 条件判断（多重选择）
 //        LearnSwitchCase.practiceJava12("apple"); // 04.2.1、switch case 条件判断（模式匹配）
 //        LearnSwitchCase.practiceReturn("apple"); // 04.2.2、switch case 返回值
-//        LearnWhile.practice();                   // 05、while 循环
-//        LearnDoWhile.practice();                 // 06、do while 循环
-        // TODO
+//        Loop.breakPractice();                    // 05.0.1、循环♻️—— break 语句
+        Loop.continuePractice();                 // 05.0.2、循环♻️—— continue 语句
+//        LearnWhile.whilePractice();              // 05.1、while 循环
+//        LearnWhile.doWhile();                    // 05.2、do while 循环
+//        LearnFor.forPractice();                  // 05.3、for 循环
+//        LearnFor.simpleFor();                    // 05.3.1、for 循环简易使用
+//        LearnFor.forEach();                      // 05.4、for each 循环
 
         // 暂未编号分类
 //        ScannerPrint.print();   // 输出

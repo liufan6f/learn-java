@@ -1,20 +1,21 @@
 package com.liufan.learn;
 
-import com.liufan.learn.basicdata.BasicData; // import 是导入某个类的语句，必须放到 Java 源代码的开头
-import com.liufan.learn.basicdata.LearnInteger;
-import com.liufan.learn.basicdata.LearnFloat;
-import com.liufan.learn.basicdata.LearnBoolean;
-import com.liufan.learn.basicdata.LearnChar;
-import com.liufan.learn.classtype.ArrayOperations;
-import com.liufan.learn.classtype.LearnClass;
-import com.liufan.learn.classtype.LearnString;
-import com.liufan.learn.classtype.LearnArray;
-import com.liufan.learn.classtype.MultidimensionalArray;
-import com.liufan.learn.processcontrol.LearnIf;
-import com.liufan.learn.processcontrol.LearnSwitchCase;
-import com.liufan.learn.processcontrol.LearnWhile;
-import com.liufan.learn.processcontrol.LearnFor;
-import com.liufan.learn.processcontrol.Loop;
+//import com.liufan.learn.CommandLine; // 在命令行编译时，包内的类也需要声明
+//import com.liufan.learn.basicdata.BasicData; // import 是导入某个类的语句，必须放到 Java 源代码的开头
+//import com.liufan.learn.basicdata.LearnInteger;
+//import com.liufan.learn.basicdata.LearnFloat;
+//import com.liufan.learn.basicdata.LearnBoolean;
+//import com.liufan.learn.basicdata.LearnChar;
+//import com.liufan.learn.classtype.ArrayOperations;
+//import com.liufan.learn.classtype.LearnClass;
+//import com.liufan.learn.classtype.LearnString;
+//import com.liufan.learn.classtype.LearnArray;
+//import com.liufan.learn.classtype.MultidimensionalArray;
+//import com.liufan.learn.processcontrol.LearnIf;
+//import com.liufan.learn.processcontrol.LearnSwitchCase;
+//import com.liufan.learn.processcontrol.LearnWhile;
+//import com.liufan.learn.processcontrol.LearnFor;
+//import com.liufan.learn.processcontrol.Loop;
 
 /**
  * Java 规定
@@ -88,6 +89,6 @@ public class Main {
         // 暂未编号分类
 //        ScannerPrint.print();       // 输出
 //        ScannerPrint.scanner();     // 输入
-        CommandLine.practice(args); // 命令行参数
+//        CommandLine.practice(args); // 命令行参数
 	}
 }

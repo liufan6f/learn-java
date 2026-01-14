@@ -1,17 +1,19 @@
 package com.liufan.learn;
 
-//import com.liufan.learn.basicdata.BasicData; // import 是导入某个类的语句，必须放到 Java 源代码的开头
-//import com.liufan.learn.basicdata.LearnInteger;
-//import com.liufan.learn.basicdata.LearnFloat;
-//import com.liufan.learn.basicdata.LearnBoolean;
-//import com.liufan.learn.basicdata.LearnChar;
-//import com.liufan.learn.classtype.LearnClass;
-//import com.liufan.learn.classtype.LearnString;
-//import com.liufan.learn.classtype.LearnArray;
-//import com.liufan.learn.processcontrol.LearnIf;
-//import com.liufan.learn.processcontrol.LearnSwitchCase;
-//import com.liufan.learn.processcontrol.LearnWhile;
-//import com.liufan.learn.processcontrol.LearnFor;
+import com.liufan.learn.basicdata.BasicData; // import 是导入某个类的语句，必须放到 Java 源代码的开头
+import com.liufan.learn.basicdata.LearnInteger;
+import com.liufan.learn.basicdata.LearnFloat;
+import com.liufan.learn.basicdata.LearnBoolean;
+import com.liufan.learn.basicdata.LearnChar;
+import com.liufan.learn.classtype.ArrayOperations;
+import com.liufan.learn.classtype.LearnClass;
+import com.liufan.learn.classtype.LearnString;
+import com.liufan.learn.classtype.LearnArray;
+import com.liufan.learn.classtype.MultidimensionalArray;
+import com.liufan.learn.processcontrol.LearnIf;
+import com.liufan.learn.processcontrol.LearnSwitchCase;
+import com.liufan.learn.processcontrol.LearnWhile;
+import com.liufan.learn.processcontrol.LearnFor;
 import com.liufan.learn.processcontrol.Loop;
 
 /**
@@ -55,15 +57,20 @@ public class Main {
 //        LearnBoolean.Arithmetic.ternaryOperation();         // 02.3.2、三元运算
 //        LearnChar.practice();                               // 02.4、字符类型
 
-//        LearnClass.pracice();            // 03、引用类型
-//        LearnClass.equals();             // 03.0.1、判断引用类型相等
-//        LearnString.practice();          // 03.1、字符串
-//        LearnString.stringPlus();        // 03.1.1、字符串连接
-//        LearnString.multilineString();   // 03.1.2、多行字符串
-//        LearnString.immutableProperty(); // 03.1.3、字符串不可变（引用类型变量的指向）
-//        LearnArray.practice();           // 03.2、数组
-//        LearnArray.immutableProperty();  // 03.2.1、数组大小不可变（数组变量的指向）
-//        LearnArray.stringArray();        // 03.2.2、字符串数组（引用类型数组）
+//        LearnClass.pracice();                          // 03、引用类型
+//        LearnClass.equals();                           // 03.0.1、判断引用类型相等
+//        LearnString.practice();                        // 03.1、字符串
+//        LearnString.stringPlus();                      // 03.1.1、字符串连接
+//        LearnString.multilineString();                 // 03.1.2、多行字符串
+//        LearnString.immutableProperty();               // 03.1.3、字符串不可变（引用类型变量的指向）
+//        LearnArray.practice();                         // 03.2、数组
+//        LearnArray.immutableProperty();                // 03.2.1、数组大小不可变（数组变量的指向）
+//        LearnArray.stringArray();                      // 03.2.2、字符串数组（引用类型数组）
+//        ArrayOperations.print();                       // 03.2.3、数组打印
+//        ArrayOperations.sorts();                       // 03.2.4、数组排序
+//        ArrayOperations.bubbleSorts(new int[] { 1 });  // 03.2.4.1、冒泡排序
+//        MultidimensionalArray.twoDimensionalArray();   // 03.2.5、多维数组——二维数组
+//        MultidimensionalArray.threeDimensionalArray(); // 03.2.5.1、多维数组——三维数组
 
 //        LearnIf.ifPractice(50);                  // 04、流程控制
 //        LearnIf.elseIfPractice(100);             // 04.1、if 条件判断
@@ -71,7 +78,7 @@ public class Main {
 //        LearnSwitchCase.practiceJava12("apple"); // 04.2.1、switch case 条件判断（模式匹配）
 //        LearnSwitchCase.practiceReturn("apple"); // 04.2.2、switch case 返回值
 //        Loop.breakPractice();                    // 05.0.1、循环♻️—— break 语句
-        Loop.continuePractice();                 // 05.0.2、循环♻️—— continue 语句
+//        Loop.continuePractice();                 // 05.0.2、循环♻️—— continue 语句
 //        LearnWhile.whilePractice();              // 05.1、while 循环
 //        LearnWhile.doWhile();                    // 05.2、do while 循环
 //        LearnFor.forPractice();                  // 05.3、for 循环
@@ -79,7 +86,8 @@ public class Main {
 //        LearnFor.forEach();                      // 05.4、for each 循环
 
         // 暂未编号分类
-//        ScannerPrint.print();   // 输出
-//        ScannerPrint.scanner(); // 输入
+//        ScannerPrint.print();       // 输出
+//        ScannerPrint.scanner();     // 输入
+        CommandLine.practice(args); // 命令行参数
 	}
 }

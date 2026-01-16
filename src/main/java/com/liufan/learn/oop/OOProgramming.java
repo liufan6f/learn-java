@@ -1,6 +1,5 @@
 package com.liufan.learn.oop;
 
-import com.liufan.learn.oop.learnextends.Shape2D;
 import com.liufan.learn.oop.method.VarParam;
 
 import java.util.Arrays;
@@ -186,7 +185,7 @@ public class OOProgramming {
      * <p>
      * 方法重载是指多个方法的方法名相同，但各自的参数不同。目的是，功能类似的方法使用同一名字，更便于记忆。
      * <p>
-     * ⚠️注意：方法重载的返回值类型通常都是相同的。
+     * ⚠️注意：方法重载的返回值类型通常都是相同的。方法名相同，方法参数相同，但方法返回值不同，也是不同的方法。在 Java 程序中，出现这种情况，编译器会报错。
      */
     public static void methodOverload() {
         /*
@@ -201,6 +200,8 @@ public class OOProgramming {
 
     /**
      * 继承（extends）、super 关键字
+     * <p>
+     * 继承是面向对象编程的一种强大的代码复用方式，Java 只允许单继承，所有类最终的根类是 Object
      * @see com.liufan.learn.oop.learnextends.Student
      */
     public static void extendsPractice() {
@@ -210,9 +211,116 @@ public class OOProgramming {
 
     /**
      * 阻止继承（final）、限定继承（sealed permits）
-     * @see Shape2D
+     * @see com.liufan.learn.oop.learnextends.Shape
      */
     public static void preventExtends() {
         System.out.println("只要 class 没有用 final 修饰符，那么他就是可继承的");
+    }
+
+    /**
+     * 向上转型
+     * <p>
+     * 向上转型（upcasting）实际上是把一个子类型安全地变为更加抽象的父类型
+     */
+    public static void upcasting() {
+        /*
+        这是因为 Student 继承自 Person，它拥有 Person 的全部功能，继承树： Student > Person > Object
+
+        var s = new com.liufan.learn.oop.learnextends.Student("Xiao Ming", 18, 100);
+        com.liufan.learn.oop.learnextends.Person p = s;
+        Object o1 = p;
+        Object o2 = s;
+         */
+        System.out.println("向上转型实际上是把一个子类型安全地变为更加抽象的父类型");
+    }
+
+    /**
+     * 向下转型：把一个父类类型强制转型为子类类型，就是向下转型（downcasting）。
+     * <p>
+     * instanceof 操作符：instanceof 实际上判断一个变量所指向的实例是否是指定类型，或者这个类型的子类。如果一个引用变量为 null，那么对任何 instanceof 的判断都为 false。
+     * @since 从 Java 14 开始，判断 instanceof 后，可以直接转型为指定变量，避免再次强制转型。
+     */
+    public static void downcasting() {
+        com.liufan.learn.oop.learnextends.Person p1 = new com.liufan.learn.oop.learnextends.Student("Xiao Ming", 18, 100);
+        // p1 实际指向 Student 实例，向下转型为 Student 会成功
+        var s1 = (com.liufan.learn.oop.learnextends.Student) p1;
+        System.out.println(s1.hello());
+
+        // p2 实际指向 Person 实例，向下转型为 Student 会失败
+        var p2 = new com.liufan.learn.oop.learnextends.Person("Xiao Bai", 15);
+        // 不能把父类变为子类，因为子类功能比父类多，多的功能无法凭空变出来。
+//        var s2 = (com.liufan.learn.oop.learnextends.Student) p2; // runtime error ClassCastException
+
+        // 为了避免向下转型出错，Java 提供了 instanceof 操作符，可以先判断一个实例究竟是不是某种类型。
+        System.out.println(p1 instanceof com.liufan.learn.oop.learnextends.Person);  // true
+        System.out.println(p1 instanceof com.liufan.learn.oop.learnextends.Student); // true
+        System.out.println(p2 instanceof com.liufan.learn.oop.learnextends.Student); // false
+        String s = null;
+        System.out.println(s instanceof String); // false
+        System.out.println(s instanceof Object); // false
+        // 利用 instanceof，在向下转型前可以先判断
+        if (p1 instanceof com.liufan.learn.oop.learnextends.Student) {
+            var s3 = (com.liufan.learn.oop.learnextends.Student) p1;
+            System.out.println(s3.hello());
+        }
+
+        // 从 Java 14 开始，判断 instanceof 后，可以直接转型为指定变量，避免再次强制转型。
+        if (p1 instanceof com.liufan.learn.oop.learnextends.Student s3) {
+            System.out.println(s3.hello());
+        }
+    }
+
+    /**
+     * 区分继承和组合
+     * <p>
+     * 子类和父类的继承是 is 关系，组合是 has 关系。
+     */
+    public static void composition() {
+        /*
+        在使用继承时，我们要注意逻辑一致性。假设有一个 Book 类：
+        class Book {
+            protected String name;
+            public String getName() {...}
+            public void setName(String name) {...}
+        }
+
+        这个 Book 类也有 name 字段，那么，我们能不能让 Student 继承自 Book 呢？
+        class Student extends Book {
+            protected int score;
+        }
+
+        显然，从逻辑上讲，这是不合理的，Student 不应该从 Book 继承，而应该从 Person 继承。
+        究其原因，是因为 Student 是 Person 的一种，它们是 is 关系，而 Student 并不是 Book。实际上 Student 和 Book 的关系是 has 关系。
+
+        具有 has 关系不应该使用继承，而是使用组合，即 Student 可以持有一个 Book 实例：
+        class Student extends Person {
+            protected Book book;
+            protected int score;
+        }
+         */
+        System.out.println("继承是 is 关系，组合是 has 关系");
+    }
+
+    /**
+     * 多态、方法覆写（Override）
+     * @see com.liufan.learn.oop.polymorphic.Student
+     * @see #downcasting()
+     */
+    public static void polymorphic() {
+        /*
+        我们已经知道，引用变量的声明类型可能与其实际类型不符，详情查看 downcasting() 方法。
+
+        现在，我们考虑一种情况，如果子类覆写了父类的方法，那么，一个实际类型为 Student，引用类型为 Person 的变量，
+        调用其 run() 方法，调用的是 Person 还是 Student 的 run() 方法？
+         */
+        com.liufan.learn.oop.polymorphic.Person p = new com.liufan.learn.oop.polymorphic.Student();
+        p.run(); // 应该打印 Person.run 还是 Student.run?
+
+        /*
+        运行一下上面的代码就可以知道，实际上调用的方法是 Student 的 run() 方法。因此可得出结论：
+        Java 的实例方法调用是基于运行时的实际类型的动态调用，而非变量的声明类型。
+        这个非常重要的特性在面向对象编程中称之为多态。它的英文拼写非常复杂：Polymorphic。
+        */
+        // TODO 多态
     }
 }

@@ -37,7 +37,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            OOProgramming.extendsPractice();
+            OOProgramming.polymorphic();
             return;
         }
 
@@ -97,10 +97,14 @@ public class Main {
         OOProgramming.thisLearn();         // 05.2.1、方法 —— this 关键字
         OOProgramming.variableParam();     // 05.2.2、方法 —— 可变参数
         OOProgramming.parmaBinding();      // 05.2.3、方法 —— 参数绑定
-        OOProgramming.methodOverload();    // 05.2.4、方法 —— 方法重载
+        OOProgramming.methodOverload();    // 05.2.4、方法 —— 方法重载（Overload）
         OOProgramming.constructorMethod(); // 05.3、构造方法
         OOProgramming.extendsPractice();   // 05.4、继承（extends）、super 关键字
         OOProgramming.preventExtends();    // 05.4.1、阻止继承（final）、限定继承（sealed permits）
+        OOProgramming.upcasting();         // 05.4.2、向上转型
+        OOProgramming.downcasting();       // 05.4.3、向下转型、instanceof 操作符
+        OOProgramming.composition();       // 05.4.4、区分继承和组合
+        OOProgramming.polymorphic();      // 05.5、多态、方法覆写（Override）
 
         // 暂未编号分类
         ScannerPrint.print();                        // 输出

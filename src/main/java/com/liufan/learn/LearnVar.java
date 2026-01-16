@@ -11,7 +11,7 @@ package com.liufan.learn;
  * @see com.liufan.learn.basicdata.BasicData
  * @see com.liufan.learn.classtype.LearnClass
  */
-public class LearnVariable {
+public class LearnVar {
 
     /**
      * 基本数据类型的变量“持有”某个数值；引用类型的变量“指向”某个对象
@@ -72,7 +72,18 @@ public class LearnVariable {
     }
 
     /**
-     * 常量
+     * var 关键字
+     * <p>
+     * 有时，类的名字太长，写起来比较麻烦，这个时候，如果想省略变量类型，可以使用 var 关键字。
+     */
+    public static void varPractice() {
+//        StringBuilder sb = new StringBuilder();
+//        var sb = new StringBuilder(); // 编译器会根据赋值语句自动推断出变量 sb 的类型是 StringBuilder
+        System.out.println("var 关键字用来替换一些名字长的类");
+    }
+
+    /**
+     * 常量 final 关键字
      * <p>
      * 定义变量的时候，如果加上 final 修饰符，这个变量就变成了常量
      */
@@ -84,16 +95,5 @@ public class LearnVariable {
         double area = PI * r * r;
         System.out.println(area);
         // PI = 3.1416; // 报错：常量不能重新赋值
-    }
-
-    /**
-     * var 关键字
-     * <p>
-     * 有时，类的名字太长，写起来比较麻烦，这个时候，如果想省略变量类型，可以使用 var 关键字。
-     */
-   public static void varPractice() {
-//        StringBuilder sb = new StringBuilder();
-//        var sb = new StringBuilder(); // 编译器会根据赋值语句自动推断出变量 sb 的类型是 StringBuilder
-        System.out.println("var 关键字用来替换一些名字长的类");
     }
 }

@@ -7,7 +7,7 @@ package com.liufan.learn.processcontrol;
  * @since Java 14 开始，switch 语句正式升级为表达式，不再需要 break，并且允许使用 yield 返回值。
  * @see LearnIf
  */
-public class LearnSwitchCase {
+public class LearnSwitch {
 
     /**
      * switch case 条件判断练习

@@ -1,5 +1,7 @@
 package com.liufan.learn.classtype;
 
+import com.liufan.learn.LearnVar;
+
 /**
  * 字符串
  * <p>
@@ -87,7 +89,7 @@ public class LearnString extends LearnClass {
      * 字符串不可变（引用类型变量的指向）
      * <p>
      * Java 的字符串除了是一个引用类型外，还有个重要特点，就是字符串不可变。
-     * @see com.liufan.learn.LearnVariable#practice()
+     * @see LearnVar#practice()
      * @see LearnArray#immutableProperty()
      * @see LearnArray#stringArray()
      */

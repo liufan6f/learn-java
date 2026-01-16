@@ -4,7 +4,7 @@ import com.liufan.learn.basicdata.LearnFloat;
 
 /**
  * if 条件判断
- * @see LearnSwitchCase
+ * @see LearnSwitch
  */
 public class LearnIf {
 

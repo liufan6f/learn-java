@@ -9,10 +9,10 @@ import com.liufan.learn.classtype.ArrayOperations;
 import com.liufan.learn.classtype.LearnClass;
 import com.liufan.learn.classtype.LearnString;
 import com.liufan.learn.classtype.LearnArray;
-import com.liufan.learn.classtype.MultidimensionalArray;
-import com.liufan.learn.oop.ObjectOrientedProgramming;
+import com.liufan.learn.classtype.ArrayMultiD;
+import com.liufan.learn.oop.OOProgramming;
 import com.liufan.learn.processcontrol.LearnIf;
-import com.liufan.learn.processcontrol.LearnSwitchCase;
+import com.liufan.learn.processcontrol.LearnSwitch;
 import com.liufan.learn.processcontrol.LearnWhile;
 import com.liufan.learn.processcontrol.LearnFor;
 import com.liufan.learn.processcontrol.Loop;
@@ -37,13 +37,13 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            ObjectOrientedProgramming.constructorMethod();
+            OOProgramming.extendsPractice();
             return;
         }
 
-        LearnVariable.practice();      // 01、变量
-        LearnVariable.finalPractice(); // 01.1、常量
-        LearnVariable.varPractice();   // 01.2、var 关键字
+        LearnVar.practice();      // 01、变量
+        LearnVar.varPractice();   // 01.1、变量 var
+        LearnVar.finalPractice(); // 01.2、常量 final
 
         BasicData.learn();                                  // 02、基本数据类型
         LearnInteger.practice();                            // 02.1、整型
@@ -64,40 +64,43 @@ public class Main {
         LearnBoolean.Arithmetic.ternaryOperation();         // 02.3.2、三元运算
         LearnChar.practice();                               // 02.4、字符类型
 
-        LearnClass.pracice();                          // 03、引用类型
-        LearnClass.equals();                           // 03.0.1、判断引用类型相等
-        LearnString.practice();                        // 03.1、字符串
-        LearnString.stringPlus();                      // 03.1.1、字符串连接
-        LearnString.multilineString();                 // 03.1.2、多行字符串
-        LearnString.immutableProperty();               // 03.1.3、字符串不可变（引用类型变量的指向）
-        LearnArray.practice();                         // 03.2、数组
-        LearnArray.immutableProperty();                // 03.2.1、数组大小不可变（数组变量的指向）
-        LearnArray.stringArray();                      // 03.2.2、字符串数组（引用类型数组）
-        ArrayOperations.print();                       // 03.2.3、数组打印
-        ArrayOperations.sorts();                       // 03.2.4、数组排序
-        ArrayOperations.bubbleSorts(new int[] { 1 });  // 03.2.4.1、冒泡排序
-        MultidimensionalArray.twoDimensionalArray();   // 03.2.5、多维数组 —— 二维数组
-        MultidimensionalArray.threeDimensionalArray(); // 03.2.5.1、多维数组 —— 三维数组
+        LearnClass.pracice();                         // 03、引用类型
+        LearnClass.equals();                          // 03.0.1、判断引用类型相等
+        LearnString.practice();                       // 03.1、字符串
+        LearnString.stringPlus();                     // 03.1.1、字符串连接
+        LearnString.multilineString();                // 03.1.2、多行字符串
+        LearnString.immutableProperty();              // 03.1.3、字符串不可变（引用类型变量的指向）
+        LearnArray.practice();                        // 03.2、数组
+        LearnArray.immutableProperty();               // 03.2.1、数组大小不可变（数组变量的指向）
+        LearnArray.stringArray();                     // 03.2.2、字符串数组（引用类型数组）
+        ArrayOperations.print();                      // 03.2.3、数组打印
+        ArrayOperations.sorts();                      // 03.2.4、数组排序
+        ArrayOperations.bubbleSorts(new int[] { 1 }); // 03.2.4.1、冒泡排序
+        ArrayMultiD.array2D();                        // 03.2.5、多维数组 —— 二维数组
+        ArrayMultiD.array3D();                        // 03.2.5.1、多维数组 —— 三维数组
 
-        LearnIf.ifPractice(50);                     // 04、流程控制
-        LearnIf.elseIfPractice(100);                // 04.1、if 条件判断
-        LearnSwitchCase.practice(1, "apple"); // 04.2、switch case 条件判断（多重选择）
-        LearnSwitchCase.practiceJava12("apple");     // 04.2.1、switch case 条件判断（模式匹配）
-        LearnSwitchCase.practiceReturn("apple");     // 04.2.2、switch case 返回值
-        LearnWhile.whilePractice();                       // 04.3.1、while 循环♻️
-        LearnWhile.doWhile();                             // 04.3.2、do while 循环♻️
-        LearnFor.forPractice();                           // 04.4.1、for 循环♻️
-        LearnFor.simpleFor();                             // 04.4.2、for 循环♻️简易使用
-        LearnFor.forEach();                               // 04.4.3、for each 循环♻️
-        Loop.breakPractice();                             // 04.5.1、循环♻️—— break 语句
-        Loop.continuePractice();                          // 04.5.2、循环♻️—— continue 语句
+        LearnIf.ifPractice(50);                 // 04、流程控制
+        LearnIf.elseIfPractice(100);            // 04.1、if 条件判断
+        LearnSwitch.practice(1, "apple"); // 04.2、switch 条件判断（多重选择）
+        LearnSwitch.practiceJava12("apple");     // 04.2.1、switch 条件判断（模式匹配）
+        LearnSwitch.practiceReturn("apple");     // 04.2.2、switch 返回值
+        LearnWhile.whilePractice();                   // 04.3.1、while 循环♻️
+        LearnWhile.doWhile();                         // 04.3.2、do while 循环♻️
+        LearnFor.forPractice();                       // 04.4.1、for 循环♻️
+        LearnFor.simpleFor();                         // 04.4.2、for 循环♻️简易使用
+        LearnFor.forEach();                           // 04.4.3、for each 循环♻️
+        Loop.breakPractice();                         // 04.5.1、循环♻️—— break 语句
+        Loop.continuePractice();                      // 04.5.2、循环♻️—— continue 语句
 
-        ObjectOrientedProgramming.learn();             // 05、面向对象编程
-        ObjectOrientedProgramming.createInstance();    // 05.1、类（class）、实例（instance）、方法（method）和字段（field）
-        ObjectOrientedProgramming.thisLearn();         // 05.2.1、方法（method）—— this 变量
-        ObjectOrientedProgramming.variableParam();     // 05.2.2、方法（method）—— 可变参数
-        ObjectOrientedProgramming.parmaBinding();      // 05.2.3、方法（method）—— 参数绑定
-        ObjectOrientedProgramming.constructorMethod(); // 05.3、构造方法
+        OOProgramming.learn();             // 05、面向对象编程
+        OOProgramming.createInstance();    // 05.1、类（class）、实例（instance）、方法（method）和字段（field）
+        OOProgramming.thisLearn();         // 05.2.1、方法 —— this 关键字
+        OOProgramming.variableParam();     // 05.2.2、方法 —— 可变参数
+        OOProgramming.parmaBinding();      // 05.2.3、方法 —— 参数绑定
+        OOProgramming.methodOverload();    // 05.2.4、方法 —— 方法重载
+        OOProgramming.constructorMethod(); // 05.3、构造方法
+        OOProgramming.extendsPractice();   // 05.4、继承（extends）、super 关键字
+        OOProgramming.preventExtends();    // 05.4.1、阻止继承（final）、限定继承（sealed permits）
 
         // 暂未编号分类
         ScannerPrint.print();                        // 输出

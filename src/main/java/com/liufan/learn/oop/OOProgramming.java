@@ -1,6 +1,7 @@
 package com.liufan.learn.oop;
 
-import com.liufan.learn.oop.method.VariableParam;
+import com.liufan.learn.oop.learnextends.Shape2D;
+import com.liufan.learn.oop.method.VarParam;
 
 import java.util.Arrays;
 
@@ -9,7 +10,7 @@ import java.util.Arrays;
  * <p>
  * Java 是一种面向对象的编程语言。面向对象编程，英文是 Object-Oriented Programming，简称 OOP。
  */
-public class ObjectOrientedProgramming {
+public class OOProgramming {
 
     public static void learn() {
         /*
@@ -107,7 +108,7 @@ public class ObjectOrientedProgramming {
      * 可变参数相当于数组类型参数，但比数组类型要方便的多
      */
     public static void variableParam() {
-        VariableParam p = new VariableParam();
+        VarParam p = new VarParam();
         p.setNames(new String[] { "apple", "banana", "orange" });
         System.out.println(Arrays.toString(p.getNames()));
         p.setNames("apple", "banana");
@@ -139,7 +140,7 @@ public class ObjectOrientedProgramming {
         System.out.println(bai.getName() + "，虚岁 " + bai.getAge() + "，出生年份是 " + bai.getBirthYear());
 
         // 引用类型参数绑定
-        VariableParam p = new VariableParam();
+        VarParam p = new VarParam();
         String[] names = { "apple", "banana", "orange" };
         p.setNames(names);
         System.out.println(Arrays.toString(p.getNames()));
@@ -178,5 +179,40 @@ public class ObjectOrientedProgramming {
         // 存在多个构造方法时，会自动匹配到对应的构造方法
         var p1 = new com.liufan.learn.oop.constructormethod.Person("Teenager");
         System.out.println(p1.getName() + "，少年永远 " + p1.getAge());
+    }
+
+    /**
+     * 方法重载（Overload）
+     * <p>
+     * 方法重载是指多个方法的方法名相同，但各自的参数不同。目的是，功能类似的方法使用同一名字，更便于记忆。
+     * <p>
+     * ⚠️注意：方法重载的返回值类型通常都是相同的。
+     */
+    public static void methodOverload() {
+        /*
+        举个例子，String 类提供了多个重载方法 indexOf()，可以查找子串：
+        1、int indexOf(int ch)：根据字符的 Unicode 码查找；
+        2、int indexOf(String str)：根据字符串查找；
+        3、int indexOf(int ch, int fromIndex)：根据字符查找，但指定起始位置；、
+        4、int indexOf(String str, int fromIndex)：根据字符串查找，但指定起始位置。
+         */
+        System.out.println("方法重载是指多个方法的方法名相同，但各自的参数不同。目的是，功能类似的方法使用同一名字，更便于记忆。");
+    }
+
+    /**
+     * 继承（extends）、super 关键字
+     * @see com.liufan.learn.oop.learnextends.Student
+     */
+    public static void extendsPractice() {
+        var s = new com.liufan.learn.oop.learnextends.Student("Xiao Ming", 18, 100);
+        System.out.println(s.hello());
+    }
+
+    /**
+     * 阻止继承（final）、限定继承（sealed permits）
+     * @see Shape2D
+     */
+    public static void preventExtends() {
+        System.out.println("只要 class 没有用 final 修饰符，那么他就是可继承的");
     }
 }

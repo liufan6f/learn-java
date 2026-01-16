@@ -1,5 +1,7 @@
 package com.liufan.learn.classtype;
 
+import com.liufan.learn.LearnVar;
+
 import java.util.Arrays;
 
 /**
@@ -42,7 +44,7 @@ public class LearnArray extends LearnClass {
      * 数组大小不可变（数组变量的指向）
      * @see #stringArray()
      * @see LearnString#immutableProperty()
-     * @see com.liufan.learn.LearnVariable#practice()
+     * @see LearnVar#practice()
      */
     public static void immutableProperty() {
         int[] ns = new int[] { 68, 79, 91, 85, 62 };
@@ -76,7 +78,7 @@ public class LearnArray extends LearnClass {
      * 字符串数组（引用类型数组）
      * @see #immutableProperty()
      * @see LearnString#immutableProperty()
-     * @see com.liufan.learn.LearnVariable#practice()
+     * @see LearnVar#practice()
      */
     public static void stringArray() {
         String[] names = { "ABC", "XYZ", "zoo" };

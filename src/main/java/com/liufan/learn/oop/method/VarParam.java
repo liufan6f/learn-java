@@ -1,6 +1,6 @@
 package com.liufan.learn.oop.method;
 
-public class VariableParam {
+public class VarParam {
 
     private String[] names;
 

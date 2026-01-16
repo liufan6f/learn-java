@@ -5,12 +5,12 @@ import java.util.Arrays;
 /**
  * 多维数组
  */
-public class MultidimensionalArray extends LearnArray {
+public class ArrayMultiD extends LearnArray {
 
     /**
      * 二维数组
      */
-    public static void twoDimensionalArray() {
+    public static void array2D() {
         int[][] ns = {
                 { 1, 2, 3, 4},
                 { 5, 6, 7, 8 },
@@ -42,7 +42,7 @@ public class MultidimensionalArray extends LearnArray {
      * <p>
      * 理论上，我们可以定义任意的 n 维数组。但在实际应用中，除了二维数组在某些时候还能用得上，更高维度的数组很少使用。
      */
-    public static void threeDimensionalArray() {
+    public static void array3D() {
         int[][][] ns = {
                 {
                         {1, 2, 3},

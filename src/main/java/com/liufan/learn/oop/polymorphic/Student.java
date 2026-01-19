@@ -3,12 +3,20 @@ package com.liufan.learn.oop.polymorphic;
 /**
  * 多态
  * <p>
- * 在继承关系中，子类如果定义了一个与父类方法签名完全相同的方法，被称为覆写（Override）。
+ * 多态是指，针对某个类型的方法调用，其真正执行的方法取决于运行时期实际类型的方法。
+ *
+ *
  */
 public class Student extends Person {
 
+    public Student(String name) {
+        super(name);
+    }
+
     /**
      * 方法覆写（Override）
+     * <p>
+     * 在继承关系中，子类如果定义了一个与父类方法签名完全相同的方法，被称为覆写。
      * <p>
      * Override 和 Overload 不同的是，
      * Overload 方法是一个新方法；而如果方法签名相同，返回值也相同，就是 Override。
@@ -19,6 +27,12 @@ public class Student extends Person {
     @Override
     public void run() {
         System.out.println("Student.run");
+    }
+
+    @Override
+    public String hello() {
+        // 调用父类 hello() 方法
+        return super.hello() + " student";
     }
 
     /**

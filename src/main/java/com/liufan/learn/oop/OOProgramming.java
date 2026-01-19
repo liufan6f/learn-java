@@ -1,6 +1,9 @@
 package com.liufan.learn.oop;
 
 import com.liufan.learn.oop.method.VarParam;
+import com.liufan.learn.oop.polymorphic.Income;
+import com.liufan.learn.oop.polymorphic.Salary;
+import com.liufan.learn.oop.polymorphic.StateCouncilSpecialAllowance;
 
 import java.util.Arrays;
 
@@ -313,14 +316,49 @@ public class OOProgramming {
         现在，我们考虑一种情况，如果子类覆写了父类的方法，那么，一个实际类型为 Student，引用类型为 Person 的变量，
         调用其 run() 方法，调用的是 Person 还是 Student 的 run() 方法？
          */
-        com.liufan.learn.oop.polymorphic.Person p = new com.liufan.learn.oop.polymorphic.Student();
-        p.run(); // 应该打印 Person.run 还是 Student.run?
+        com.liufan.learn.oop.polymorphic.Person p = new com.liufan.learn.oop.polymorphic.Student("Xiao Ming");
+        p.run();                       // 应该打印 Person.run 还是 Student.run?
+        System.out.println(p.hello()); // super 调用父类方法
 
         /*
         运行一下上面的代码就可以知道，实际上调用的方法是 Student 的 run() 方法。因此可得出结论：
         Java 的实例方法调用是基于运行时的实际类型的动态调用，而非变量的声明类型。
         这个非常重要的特性在面向对象编程中称之为多态。它的英文拼写非常复杂：Polymorphic。
+        所以，多态的特性就是，运行期才能动态决定调用的子类方法。对某个类型调用某个方法，执行的实际方法可能是某个子类的覆写方法。
+        这种不确定性的方法调用，究竟有什么作用？
+
+        多态应用：
+        现在，我们要编写一个报税的财务软件，对于一个人的所有收入进行报税：
         */
-        // TODO 多态
+        Income[] incomes = new Income[] {
+                new Income(3000),
+                new Salary(7500),
+                new StateCouncilSpecialAllowance(15000)
+        };
+        System.out.println(totalTax(incomes));
+    }
+
+    /**
+     * 利用多态，本方法只需要和 Income 打交道，它完全不需要知道 Salary 和 StateCouncilSpecialAllowance 的存在，
+     * 就可以正确计算出总的税。
+     * <p>
+     * 如果我们要新增一种稿费收入，只需要从 Income 派生，然后正确覆写 getTax() 方法就可以。把新的类型传入本方法，不需要修改任何代码。
+     * <p>
+     * 可见，多态具有一个非常强大的功能，就是允许添加更多类型的子类实现功能扩展，却不需要修改基于父类的代码。
+     */
+    private static double totalTax(Income... incomes) {
+        double total = 0;
+        for (var income : incomes) {
+            total = total + income.getTax();
+        }
+        return total;
+    }
+
+    /**
+     * 覆写 Object 方法
+     * @see com.liufan.learn.oop.polymorphic.Person
+     */
+    public static void overrideObjectMethod() {
+        System.out.println("所有 class 最终都继承自 Object，而 Object 定义了几个重要的方法。");
     }
 }

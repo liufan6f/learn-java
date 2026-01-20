@@ -29,6 +29,7 @@ public class Student extends Person {
      * <p>
      * 实际上，这里使用 super.name，或者 this.name，或者 name，效果都是一样的。编译器会自动定位到父类的 name 字段。
      * @see #Student(String, int, int) 必须使用 super 的情况
+     * @see com.liufan.learn.oop.polymorphic.Student#hello() super 调用父类方法
      */
     public String hello() {
         return "Hello, " + super.name;

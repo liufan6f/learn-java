@@ -5,7 +5,7 @@ package com.liufan.learn;
  * <p>
  * 在 Java 中分为两种：
  * <ol>
- *     <li>基本数据类型（值类型）的变量，变量是“持有”某个数值；</li>
+ *     <li>基本数据类型的变量，变量是“持有”某个数值；</li>
  *     <li>引用类型的变量，变量是“指向”某个对象，它也可以指向一个空值 <code>null</code>，表示不存在，不指向任何对象。</li>
  * </ol>
  * @see com.liufan.learn.basicdata.BasicData
@@ -83,9 +83,12 @@ public class LearnVar {
     }
 
     /**
-     * 常量 final 关键字
+     * 常量 final 修饰符
      * <p>
      * 定义变量的时候，如果加上 final 修饰符，这个变量就变成了常量
+     * @see com.liufan.learn.oop.learnextends.Shape final 修饰符阻止类继承
+     * @see com.liufan.learn.oop.polymorphic.Student#run(String) final 修饰符阻止方法覆写（Override）
+     * @see com.liufan.learn.oop.polymorphic.Student#position final 修饰符阻止字段修改
      */
     public static void finalPractice() {
         // 常量的作用是用有意义的变量名来避免魔术数字（Magic number），例如不要在代码中到处写 3.14，而是定义一个常量。

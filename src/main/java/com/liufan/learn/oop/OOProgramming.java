@@ -129,7 +129,7 @@ public class OOProgramming {
      * </ul>
      */
     public static void parmaBinding() {
-        // 基本数据类型（值类型）参数绑定
+        // 基本数据类型参数绑定
         var bai = new com.liufan.learn.oop.method.Person();
         String xiaoBai = "Xiao Bai";
         bai.setName(xiaoBai);
@@ -316,7 +316,7 @@ public class OOProgramming {
         现在，我们考虑一种情况，如果子类覆写了父类的方法，那么，一个实际类型为 Student，引用类型为 Person 的变量，
         调用其 run() 方法，调用的是 Person 还是 Student 的 run() 方法？
          */
-        com.liufan.learn.oop.polymorphic.Person p = new com.liufan.learn.oop.polymorphic.Student("Xiao Ming");
+        com.liufan.learn.oop.polymorphic.Person p = new com.liufan.learn.oop.polymorphic.Student("Xiao Ming", "班长");
         p.run();                       // 应该打印 Person.run 还是 Student.run?
         System.out.println(p.hello()); // super 调用父类方法
 
@@ -360,5 +360,13 @@ public class OOProgramming {
      */
     public static void overrideObjectMethod() {
         System.out.println("所有 class 最终都继承自 Object，而 Object 定义了几个重要的方法。");
+    }
+
+    /**
+     * final 修饰符在类、方法和字段中的应用
+     */
+    public static void finalPractice() {
+        var s = new com.liufan.learn.oop.polymorphic.Student("Xiao Ming", "班长");
+        s.run("奥力给！");
     }
 }

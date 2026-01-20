@@ -37,13 +37,13 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            OOProgramming.polymorphic();
+            OOProgramming.finalPractice();
             return;
         }
 
         LearnVar.practice();      // 01、变量
-        LearnVar.varPractice();   // 01.1、变量 var
-        LearnVar.finalPractice(); // 01.2、常量 final
+        LearnVar.varPractice();   // 01.1、变量 —— var 关键字
+        LearnVar.finalPractice(); // 01.2、常量 —— final 修饰符
 
         BasicData.learn();                                  // 02、基本数据类型
         LearnInteger.practice();                            // 02.1、整型
@@ -79,16 +79,16 @@ public class Main {
         ArrayMultiD.array2D();                        // 03.2.5、多维数组 —— 二维数组
         ArrayMultiD.array3D();                        // 03.2.5.1、多维数组 —— 三维数组
 
-        LearnIf.ifPractice(50);                 // 04、流程控制
-        LearnIf.elseIfPractice(100);            // 04.1、if 条件判断
-        LearnSwitch.practice(1, "apple"); // 04.2、switch 条件判断（多重选择）
-        LearnSwitch.practiceJava12("apple");     // 04.2.1、switch 条件判断（模式匹配）
+        LearnIf.ifPractice(50);                 // 04、条件判断 —— if
+        LearnIf.elseIfPractice(100);            // 04.1、条件判断 —— if 串联
+        LearnSwitch.practice(1, "apple"); // 04.2、条件判断 —— switch（多重选择）
+        LearnSwitch.practiceJava12("apple");     // 04.2.1、条件判断 —— switch（模式匹配）
         LearnSwitch.practiceReturn("apple");     // 04.2.2、switch 返回值
-        LearnWhile.whilePractice();                   // 04.3.1、while 循环♻️
-        LearnWhile.doWhile();                         // 04.3.2、do while 循环♻️
-        LearnFor.forPractice();                       // 04.4.1、for 循环♻️
-        LearnFor.simpleFor();                         // 04.4.2、for 循环♻️简易使用
-        LearnFor.forEach();                           // 04.4.3、for each 循环♻️
+        LearnWhile.whilePractice();                   // 04.3.1、循环♻️—— while
+        LearnWhile.doWhile();                         // 04.3.2、循环♻️—— do while
+        LearnFor.forPractice();                       // 04.4.1、循环♻️—— for
+        LearnFor.simpleFor();                         // 04.4.2、循环♻️—— for 简易使用
+        LearnFor.forEach();                           // 04.4.3、循环♻️—— for each
         Loop.breakPractice();                         // 04.5.1、循环♻️—— break 语句
         Loop.continuePractice();                      // 04.5.2、循环♻️—— continue 语句
 
@@ -106,6 +106,7 @@ public class Main {
         OOProgramming.composition();          // 05.4.4、区分继承和组合
         OOProgramming.polymorphic();          // 05.5、多态 —— 方法覆写（Override）
         OOProgramming.overrideObjectMethod(); // 05.5.1、多态 —— 覆写 Object 方法
+        OOProgramming.finalPractice();        // 05.5.2、多态 —— final 修饰符在类、方法和字段中的应用
 
         // 暂未编号分类
         ScannerPrint.print();                        // 输出

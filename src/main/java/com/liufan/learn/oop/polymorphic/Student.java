@@ -4,13 +4,22 @@ package com.liufan.learn.oop.polymorphic;
  * 多态
  * <p>
  * 多态是指，针对某个类型的方法调用，其真正执行的方法取决于运行时期实际类型的方法。
- *
- *
  */
 public class Student extends Person {
 
-    public Student(String name) {
+    /**
+     * final 修饰符阻止字段修改
+     * <p>
+     * 用 final 修饰的字段在初始化后不能被修改
+     * @see com.liufan.learn.LearnVar#finalPractice() final 修饰符常量应用
+     * @see com.liufan.learn.oop.learnextends.Shape final 修饰符阻止类继承
+     * @see #run(String) final 修饰符阻止方法覆写（Override）
+     */
+    public final String position; // = "班长";
+
+    public Student(String name, String position) {
         super(name);
+        this.position = position; // 在构造方法中初始化 final 字段更为常用，可以保证实例一旦创建，其字段就不可修改
     }
 
     /**
@@ -29,15 +38,24 @@ public class Student extends Person {
         System.out.println("Student.run");
     }
 
+    /**
+     * @see com.liufan.learn.oop.learnextends.Student#hello() super 引用父类字段
+     */
     @Override
     public String hello() {
-        // 调用父类 hello() 方法
+        // super 调用父类 hello() 方法
         return super.hello() + " student";
     }
 
     /**
      * 这是一个方法重载 Overload，因为参数不同
+     * <p>
+     * 同时，如果一个父类不允许子类对它的某个方法进行覆写，可以把该方法标记为 final。用 final 修饰的方法不能被 Override。
+     * @see com.liufan.learn.LearnVar#finalPractice() final 修饰符常量应用
+     * @see com.liufan.learn.oop.learnextends.Shape final 修饰符阻止类继承
+     * @see Student#position final 修饰符阻止字段修改
      */
-    void run(String s) {
+    public final void run(String s) {
+        System.out.println(name + "是" + position + "，跑步的时候喜欢说：" + s);
     }
 }

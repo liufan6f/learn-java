@@ -1,5 +1,6 @@
 package com.liufan.learn.oop;
 
+import com.liufan.learn.oop.abstractclassinterface.EmployeePayment;
 import com.liufan.learn.oop.method.VarParam;
 import com.liufan.learn.oop.polymorphic.Income;
 import com.liufan.learn.oop.polymorphic.Salary;
@@ -368,5 +369,42 @@ public class OOProgramming {
     public static void finalPractice() {
         var s = new com.liufan.learn.oop.polymorphic.Student("Xiao Ming", "班长");
         s.run("奥力给！");
+    }
+
+    /**
+     * 抽象类（abstract）
+     * <p>
+     * 这种引用抽象类的好处在于，我们对其进行方法调用，并不关心 Person 类型变量的具体子类型。
+     * 这种尽量引用高层类型，避免引用实际子类型的方式，称之为面向抽象编程。面向抽象编程的本质就是：
+     * <ul>
+     *     <li>上层代码只定义规范；</li>
+     *     <li>不需要子类就可以实现业务逻辑（正常编译）；</li>
+     *     <li>具体的业务逻辑由不同的子类实现，调用者并不关心。</li>
+     * </ul>
+     * @see #polymorphic()
+     */
+    public static void abstractClass() {
+        com.liufan.learn.oop.abstractclass.Person s = new com.liufan.learn.oop.abstractclass.Student();
+        com.liufan.learn.oop.abstractclass.Person t = new com.liufan.learn.oop.abstractclass.Teacher();
+        s.run();
+        t.run();
+    }
+
+    /**
+     * 接口（interface）
+     * @see #abstractClass()
+     * @see com.liufan.learn.oop.learninterface.Person 抽象类（abstract）与接口（interface）的区别
+     */
+    public static void interfacePractice() {
+        com.liufan.learn.oop.learninterface.Person p = new com.liufan.learn.oop.learninterface.Student();
+        p.run();
+        p.hello();
+    }
+
+    /**
+     * 抽象类与接口复合使用案例：员工工资结算
+     */
+    public static void abstractClassInterface() {
+        EmployeePayment.run();
     }
 }

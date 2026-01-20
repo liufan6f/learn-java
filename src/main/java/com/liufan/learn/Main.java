@@ -37,9 +37,14 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            OOProgramming.finalPractice();
+            OOProgramming.abstractClassInterface();
             return;
         }
+
+        // 暂未编号分类
+        ScannerPrint.print();                        // 输出
+        ScannerPrint.scanner();                      // 输入
+        com.liufan.learn.CommandLine.practice(args); // 命令行参数，⚠️在命令行编译时，同一个包内的类也需要全名
 
         LearnVar.practice();      // 01、变量
         LearnVar.varPractice();   // 01.1、变量 —— var 关键字
@@ -92,25 +97,23 @@ public class Main {
         Loop.breakPractice();                         // 04.5.1、循环♻️—— break 语句
         Loop.continuePractice();                      // 04.5.2、循环♻️—— continue 语句
 
-        OOProgramming.learn();                // 05、面向对象编程
-        OOProgramming.createInstance();       // 05.1、类（class）、实例（instance）、方法（method）和字段（field）
-        OOProgramming.thisLearn();            // 05.2.1、方法 —— this 关键字
-        OOProgramming.variableParam();        // 05.2.2、方法 —— 可变参数
-        OOProgramming.parmaBinding();         // 05.2.3、方法 —— 参数绑定
-        OOProgramming.methodOverload();       // 05.2.4、方法 —— 方法重载（Overload）
-        OOProgramming.constructorMethod();    // 05.3、构造方法
-        OOProgramming.extendsPractice();      // 05.4、继承（extends）、super 关键字
-        OOProgramming.preventExtends();       // 05.4.1、阻止继承（final）、限定继承（sealed permits）
-        OOProgramming.upcasting();            // 05.4.2、向上转型
-        OOProgramming.downcasting();          // 05.4.3、向下转型、instanceof 操作符
-        OOProgramming.composition();          // 05.4.4、区分继承和组合
-        OOProgramming.polymorphic();          // 05.5、多态 —— 方法覆写（Override）
-        OOProgramming.overrideObjectMethod(); // 05.5.1、多态 —— 覆写 Object 方法
-        OOProgramming.finalPractice();        // 05.5.2、多态 —— final 修饰符在类、方法和字段中的应用
-
-        // 暂未编号分类
-        ScannerPrint.print();                        // 输出
-        ScannerPrint.scanner();                      // 输入
-        com.liufan.learn.CommandLine.practice(args); // 命令行参数，⚠️在命令行编译时，同一个包内的类也需要全名
+        OOProgramming.learn();                  // 05、面向对象编程
+        OOProgramming.createInstance();         // 05.1、类（class）、实例（instance）、方法（method）和字段（field）
+        OOProgramming.thisLearn();              // 05.2.1、方法 —— this 关键字
+        OOProgramming.variableParam();          // 05.2.2、方法 —— 可变参数
+        OOProgramming.parmaBinding();           // 05.2.3、方法 —— 参数绑定
+        OOProgramming.methodOverload();         // 05.2.4、方法 —— 方法重载（Overload）
+        OOProgramming.constructorMethod();      // 05.3、构造方法
+        OOProgramming.extendsPractice();        // 05.4、继承（extends）、super 关键字
+        OOProgramming.preventExtends();         // 05.4.1、阻止继承（final）、限定继承（sealed permits）
+        OOProgramming.upcasting();              // 05.4.2、向上转型
+        OOProgramming.downcasting();            // 05.4.3、向下转型、instanceof 操作符
+        OOProgramming.composition();            // 05.4.4、区分继承和组合
+        OOProgramming.polymorphic();            // 05.5、多态 —— 方法覆写（Override）
+        OOProgramming.overrideObjectMethod();   // 05.5.1、多态 —— 覆写 Object 方法
+        OOProgramming.finalPractice();          // 05.5.2、多态 —— final 修饰符在类、方法和字段中的应用
+        OOProgramming.abstractClass();          // 05.6、抽象类（abstract）
+        OOProgramming.interfacePractice();      // 05.7、接口（interface）
+        OOProgramming.abstractClassInterface(); // 05.7.1、抽象类（abstract）与接口（interface）复合使用
 	}
 }

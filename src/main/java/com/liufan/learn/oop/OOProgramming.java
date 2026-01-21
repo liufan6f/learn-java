@@ -1,6 +1,7 @@
 package com.liufan.learn.oop;
 
 import com.liufan.learn.oop.abstractclassinterface.EmployeePayment;
+import com.liufan.learn.oop.learnstatic.Task;
 import com.liufan.learn.oop.method.VarParam;
 import com.liufan.learn.oop.polymorphic.Income;
 import com.liufan.learn.oop.polymorphic.Salary;
@@ -406,5 +407,37 @@ public class OOProgramming {
      */
     public static void abstractClassInterface() {
         EmployeePayment.run();
+    }
+
+    /**
+     * 静态字段和静态方法
+     * <p>
+     * 推荐用类名来访问静态字段
+     * @see #createInstance()
+     */
+    public static void staticPractice() {
+        // 解析内容前往 com.liufan.learn.oop.learnstatic.Person 类查看
+        var ming = new com.liufan.learn.oop.learnstatic.Person();
+        var hong = new com.liufan.learn.oop.learnstatic.Person();
+        ming.number = 88; // 通过实例变量访问静态字段和静态方法，会得到一个编译警告
+        System.out.println(hong.number);
+        hong.number = 99;
+        System.out.println(ming.number);
+
+        // 用类名来访问静态字段
+        com.liufan.learn.oop.learnstatic.Person.number = 100;
+        System.out.println(com.liufan.learn.oop.learnstatic.Person.number);
+        com.liufan.learn.oop.learnstatic.Person.setNumber(120);
+        System.out.println(com.liufan.learn.oop.learnstatic.Person.number);
+    }
+
+    /**
+     * 接口中的静态字段（接口常量）
+     * @see com.liufan.learn.oop.learnstatic.Priority
+     */
+    public static void staticInterface() {
+        Task t = new Task();
+        t.setPriority(1);
+        System.out.println("Task Priority set to " + t.getPriority());
     }
 }

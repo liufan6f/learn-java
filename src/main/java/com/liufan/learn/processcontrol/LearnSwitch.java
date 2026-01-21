@@ -4,7 +4,6 @@ package com.liufan.learn.processcontrol;
  * switch case 条件判断（多重选择）
  * <p>
  * 使用 switch 语句时，只要保证有 break，case 的顺序不影响程序逻辑，但是仍然建议按照自然顺序排列，便于阅读。
- * @since Java 14 开始，switch 语句正式升级为表达式，不再需要 break，并且允许使用 yield 返回值。
  * @see LearnIf
  */
 public class LearnSwitch {

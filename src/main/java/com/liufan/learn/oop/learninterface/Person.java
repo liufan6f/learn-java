@@ -59,15 +59,14 @@ Iterable it = coll;          // 向上转型为Iterable接口
  * 接口（interface）
  * <ul>
  *     <li>interface 是比抽象类还要抽象的纯抽象接口，所以不能有字段；</li>
- *     <li>所有方法默认都是 public abstract 的；</li>
- *     <li>interface 可以继承自 interface，相当于扩展了接口的方法；</li>
- *     <li>在 Java 中，一个类只能继承自另一个类。但是，一个类可以实现多个 interface；</li>
- *     <li>在接口中，可以定义 default 方法。</li>
+ *     <li>interface 可以继承自 interface，相当于扩展了接口的方法。</li>
  * </ul>
  * @see com.liufan.learn.oop.abstractclass.Person
  * @see com.liufan.learn.oop.abstractclassinterface.EmployeePayment
+ * @see com.liufan.learn.oop.learnstatic.Priority 接口中的静态字段
  */
 public interface Person extends Hello {
+    // 编译器会自动加上 public abstract
     String getName();
 
     /**

@@ -37,7 +37,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            OOProgramming.abstractClassInterface();
+            OOProgramming.staticInterface();
             return;
         }
 
@@ -115,5 +115,7 @@ public class Main {
         OOProgramming.abstractClass();          // 05.6、抽象类（abstract）
         OOProgramming.interfacePractice();      // 05.7、接口（interface）
         OOProgramming.abstractClassInterface(); // 05.7.1、抽象类（abstract）与接口（interface）复合使用
+        OOProgramming.staticPractice();         // 05.8、静态字段和静态方法
+        OOProgramming.staticInterface();        // 05.8.1、接口中的静态字段（接口常量）
 	}
 }

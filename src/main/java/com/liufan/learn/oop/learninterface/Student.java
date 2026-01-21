@@ -2,7 +2,7 @@ package com.liufan.learn.oop.learninterface;
 
 public class Student implements Person {
     /*
-    default 方法，可以不实现
+    default 方法，可以不用实现
 
     @Override
     public void run() {

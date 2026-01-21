@@ -4,6 +4,7 @@ import com.liufan.learn.oop.abstractclassinterface.EmployeePayment;
 import com.liufan.learn.oop.learnpackage.LearnPackage;
 import com.liufan.learn.oop.learnstatic.Task;
 import com.liufan.learn.oop.method.VarParam;
+import com.liufan.learn.oop.nestedclass.Outer;
 import com.liufan.learn.oop.polymorphic.Income;
 import com.liufan.learn.oop.polymorphic.Salary;
 import com.liufan.learn.oop.polymorphic.StateCouncilSpecialAllowance;
@@ -247,6 +248,7 @@ public final class OOProgramming {
      * @since 从 Java 14 开始，判断 instanceof 后，可以直接转型为指定变量，避免再次强制转型。
      */
     public static void downcasting() {
+        /*
         com.liufan.learn.oop.learnextends.Person p1 = new com.liufan.learn.oop.learnextends.Student("Xiao Ming", 18, 100);
         // p1 实际指向 Student 实例，向下转型为 Student 会成功
         var s1 = (com.liufan.learn.oop.learnextends.Student) p1;
@@ -274,6 +276,8 @@ public final class OOProgramming {
         if (p1 instanceof com.liufan.learn.oop.learnextends.Student s3) {
             System.out.println(s3.hello());
         }
+        */
+        System.out.println("取消多行注释查看 demo 即可");
     }
 
     /**
@@ -420,10 +424,12 @@ public final class OOProgramming {
         // 解析内容前往 com.liufan.learn.oop.learnstatic.Person 类查看
         var ming = new com.liufan.learn.oop.learnstatic.Person();
         var hong = new com.liufan.learn.oop.learnstatic.Person();
+        /*
         ming.number = 88; // 通过实例变量访问静态字段和静态方法，会得到一个编译警告
         System.out.println(hong.number);
         hong.number = 99;
         System.out.println(ming.number);
+        */
 
         // 用类名来访问静态字段
         com.liufan.learn.oop.learnstatic.Person.number = 100;
@@ -482,4 +488,21 @@ public final class OOProgramming {
             }                               // 8
         }                                   // 9
     }                                       // 10
+
+    /**
+     * 内部类（nested class）
+     */
+    public static void nestedClass() {
+        // 内部类（Inner Class）
+        Outer outer = new Outer("Xiao Ming");
+        Outer.Inner inner = outer.new Inner();
+        inner.hello();
+
+        // 匿名类（Anonymous Class）
+        outer.asyncHello();
+
+        // 静态内部类（Static Nested Class）
+        Outer.StaticNested sn = new Outer.StaticNested();
+        sn.hello();
+    }
 }

@@ -30,7 +30,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            OOProgramming.scope();
+            OOProgramming.nestedClass();
             return;
         }
 
@@ -113,5 +113,6 @@ public class Main {
         OOProgramming.learnPackage();           // 05.9、包（package）
         OOProgramming.scope();                  // 05.9.1、作用域 —— public、protected、private、package
         OOProgramming.scope("name");      // 05.9.2、作用域 —— 局部变量
+        OOProgramming.nestedClass();            // 05.10、内部类（nested class）
 	}
 }

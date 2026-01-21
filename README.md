@@ -154,7 +154,7 @@ IDE 是集成开发环境：Integrated Development Environment 的缩写。
 
 Java 的命名规范：
 - 包名：所有字母都小写，多个单词之间用 `.` 分隔，例如：`com.example.hello`；
-- 类名：采用大驼峰命名法，每个单词的首字母大写，例如：`HelloWorld`；
+- 类名：采用大驼峰命名法，每个单词的首字母大写，例如：`HelloWorld`；同时注意不要和 `java.lang` 包的类重名，即自己的类不要使用这些名字：`String、System、Runtime`等，也不要和 JDK 常用类重名：`java.util.List、java.text.Format、java.math.BigInteger` 等。
   - 好的类名：
     - Hello
     - NoteBook
@@ -164,7 +164,7 @@ Java 的命名规范：
     - Good123
     - Note_Book
     - _World
-    - Integer，要避免与 java 库类重名
+    - String，要避免与 `java.lang` 库类重名
 - 变量名、方法名：采用小驼峰命名法，第一个单词的首字母小写，后续单词的首字母大写，例如：`helloWorld()`；
 - 常量名：所有字母都大写，多个单词之间用下划线分隔，例如：`MAX_VALUE`。
 - 项目名：Java 并没有对项目名做强制要求，但是通常根据团队习惯或 IDE 的约定来决定。

@@ -1,6 +1,7 @@
 package com.liufan.learn.oop;
 
 import com.liufan.learn.oop.abstractclassinterface.EmployeePayment;
+import com.liufan.learn.oop.learnpackage.LearnPackage;
 import com.liufan.learn.oop.learnstatic.Task;
 import com.liufan.learn.oop.method.VarParam;
 import com.liufan.learn.oop.polymorphic.Income;
@@ -14,7 +15,7 @@ import java.util.Arrays;
  * <p>
  * Java 是一种面向对象的编程语言。面向对象编程，英文是 Object-Oriented Programming，简称 OOP。
  */
-public class OOProgramming {
+public final class OOProgramming {
 
     public static void learn() {
         /*
@@ -439,5 +440,15 @@ public class OOProgramming {
         Task t = new Task();
         t.setPriority(1);
         System.out.println("Task Priority set to " + t.getPriority());
+    }
+
+    /**
+     * 包（package）
+     * @see com.liufan.learn.oop.learnpackage.Person
+     * @see com.liufan.learn.oop.learnpackage.LearnPackage
+     */
+    public static void learnPackage() {
+        LearnPackage.practice();
+        LearnPackage.importPractice();
     }
 }

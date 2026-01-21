@@ -216,8 +216,8 @@ public final class OOProgramming {
     }
 
     /**
-     * 阻止继承（final）、限定继承（sealed permits）
-     * @see com.liufan.learn.oop.learnextends.Shape
+     * @see com.liufan.learn.oop.learnextends.Rect 阻止继承（final）
+     * @see com.liufan.learn.oop.learnextends.Shape 限定继承（sealed permits）
      */
     public static void preventExtends() {
         System.out.println("只要 class 没有用 final 修饰符，那么他就是可继承的");
@@ -445,10 +445,41 @@ public final class OOProgramming {
     /**
      * 包（package）
      * @see com.liufan.learn.oop.learnpackage.Person
-     * @see com.liufan.learn.oop.learnpackage.LearnPackage
      */
     public static void learnPackage() {
         LearnPackage.practice();
         LearnPackage.importPractice();
     }
+
+    /**
+     * 作用域 —— public、protected、private、package
+     * @see LearnPackage#practice() 包（package）作用域
+     */
+    public static void scope() {
+        com.liufan.learn.oop.learnpackage.scope.Hello.hi("class Hello"); // hello(); 外界无法访问
+        com.liufan.learn.oop.learnpackage.scope.Hello.Inner.hi();
+        com.liufan.learn.oop.learnpackage.scope.Bye.byeBye();
+    }
+
+    /**
+     * 作用域 —— 局部变量
+     * <ul>
+     *     <li>方法参数 name 是局部变量，它的作用域是整个方法，即 1 ~ 10；</li>
+     *     <li>变量 s 的作用域是定义处到方法结束，即 2 ~ 10；</li>
+     *     <li>变量 len 的作用域是定义处到方法结束，即 3 ~ 10；</li>
+     *     <li>变量 p 的作用域是定义处到方法结束，即 5 ~ 9；</li>
+     *     <li>变量 i 的作用域是定义处到方法结束，即 6 ~ 8。</li>
+     * </ul>
+     * 使用局部变量时，应该尽可能把局部变量的作用域缩小，尽可能延后声明局部变量。
+     */
+    public static void scope(String name) { // 1
+        String s = name.toLowerCase();      // 2
+        int len = s.length();               // 3
+        if (len < 10) {                     // 4
+            int p = 10 - len;               // 5
+            for (int i=0; i<10; i++) {      // 6
+                System.out.println();       // 7
+            }                               // 8
+        }                                   // 9
+    }                                       // 10
 }

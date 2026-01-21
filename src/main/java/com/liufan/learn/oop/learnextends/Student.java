@@ -6,7 +6,9 @@ package com.liufan.learn.oop.learnextends;
  * 子类可以获得父类的所有字段和方法（构造方法除外），但是不能访问父类的 private 字段和方法。
  * 如果不想让外界访问，又希望子类可以访问，用 protected 修饰。
  * <p>
- * ⚠️严禁定义与父类重名的字段
+ * ⚠️注意：
+ * 1、严禁定义与父类重名的字段；
+ * 2、没有明确写 extends 的类，编译器会自动加上 extends Object。
  */
 public class Student extends Person {
     protected int score;

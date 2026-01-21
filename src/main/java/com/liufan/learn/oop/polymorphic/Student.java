@@ -8,11 +8,10 @@ package com.liufan.learn.oop.polymorphic;
 public class Student extends Person {
 
     /**
-     * final 修饰符阻止字段修改
-     * <p>
-     * 用 final 修饰的字段在初始化后不能被修改
-     * @see com.liufan.learn.LearnVar#finalPractice() final 修饰符常量应用
-     * @see com.liufan.learn.oop.learnextends.Shape final 修饰符阻止类继承
+     * final 修饰 field 可以阻止被重新赋值
+     * @see com.liufan.learn.LearnVar#finalPractice() final 修饰的局部变量（常量）可以阻止被重新赋值
+     * @see com.liufan.learn.oop.learnpackage.scope.Hello#hi(String) final 修饰的局部变量（常量）可以阻止被重新赋值
+     * @see com.liufan.learn.oop.learnextends.Rect final 修饰 class 可以阻止被继承
      * @see #run(String) final 修饰符阻止方法覆写（Override）
      */
     public final String position; // = "班长";
@@ -48,12 +47,14 @@ public class Student extends Person {
     }
 
     /**
-     * 这是一个方法重载 Overload，因为参数不同
+     * final 修饰符阻止方法覆写（Override），
+     * 这是也一个方法重载 Overload，因为参数不同。
      * <p>
-     * 同时，如果一个父类不允许子类对它的某个方法进行覆写，可以把该方法标记为 final。用 final 修饰的方法不能被 Override。
-     * @see com.liufan.learn.LearnVar#finalPractice() final 修饰符常量应用
-     * @see com.liufan.learn.oop.learnextends.Shape final 修饰符阻止类继承
-     * @see Student#position final 修饰符阻止字段修改
+     * 如果一个父类不允许子类对它的某个方法进行覆写，可以把该方法标记为 final。用 final 修饰的方法不能被 Override。
+     * @see com.liufan.learn.LearnVar#finalPractice() final 修饰的局部变量（常量）可以阻止被重新赋值
+     * @see com.liufan.learn.oop.learnpackage.scope.Hello#hi(String) final 修饰的局部变量（常量）可以阻止被重新赋值
+     * @see com.liufan.learn.oop.learnextends.Rect final 修饰 class 可以阻止被继承
+     * @see Student#position final 修饰 field 可以阻止被重新赋值
      */
     public final void run(String s) {
         System.out.println(name + "是" + position + "，跑步的时候喜欢说：" + s);

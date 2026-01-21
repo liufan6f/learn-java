@@ -18,26 +18,19 @@ import com.liufan.learn.processcontrol.LearnFor;
 import com.liufan.learn.processcontrol.Loop;
 
 /**
- * Java 规定
- * <p>
- * <ol>
- *     <li>一个 Java 源文件可以包含多个类的定义，但只能定义一个 public 类，且 public 类名必须与文件名一致；</li>
- *     <li>没有明确写 extends 的类，编译器会自动加上 extends Object。</li>
- * </ol>
+ * 一个 Java 源文件可以包含多个类的定义，但只能定义一个 public 类，且 public 类名必须与文件名一致
  */
 public class Main {
 
 	/**
-     * Java 规定
-     * <p>
-     * 某个类定义的 public static void main(String[] args) 是 Java 程序的固定入口方法，总是从 main 方法开始执行。
+     * public static void main(String[] args) 是 Java 程序的固定入口方法，总是从 main 方法开始执行。
      */
 	public static void main(String[] args) {
         System.out.println("Hello, world! 你好，世界！");
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            OOProgramming.learnPackage();
+            OOProgramming.scope();
             return;
         }
 
@@ -118,5 +111,7 @@ public class Main {
         OOProgramming.staticPractice();         // 05.8、静态字段和静态方法
         OOProgramming.staticInterface();        // 05.8.1、接口中的静态字段（接口常量）
         OOProgramming.learnPackage();           // 05.9、包（package）
+        OOProgramming.scope();                  // 05.9.1、作用域 —— public、protected、private、package
+        OOProgramming.scope("name");      // 05.9.2、作用域 —— 局部变量
 	}
 }

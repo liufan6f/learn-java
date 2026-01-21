@@ -86,9 +86,10 @@ public class LearnVar {
      * 常量 final 修饰符
      * <p>
      * 定义变量的时候，如果加上 final 修饰符，这个变量就变成了常量
-     * @see com.liufan.learn.oop.learnextends.Shape final 修饰符阻止类继承
-     * @see com.liufan.learn.oop.polymorphic.Student#run(String) final 修饰符阻止方法覆写（Override）
-     * @see com.liufan.learn.oop.polymorphic.Student#position final 修饰符阻止字段修改
+     * @see com.liufan.learn.oop.learnpackage.scope.Hello#hi(String) final 修饰的局部变量（常量）可以阻止被重新赋值
+     * @see com.liufan.learn.oop.learnextends.Rect final 修饰 class 可以阻止被继承
+     * @see com.liufan.learn.oop.polymorphic.Student#run(String) final 修饰 method 可以阻止被子类覆写
+     * @see com.liufan.learn.oop.polymorphic.Student#position final 修饰 field 可以阻止被重新赋值
      */
     public static void finalPractice() {
         // 常量的作用是用有意义的变量名来避免魔术数字（Magic number），例如不要在代码中到处写 3.14，而是定义一个常量。

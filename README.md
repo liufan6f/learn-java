@@ -1,4 +1,4 @@
-# Java 学习记录
+# learn-java
 
 学习之前，先来认（膜）识（拜）一下 ：Java 之父，[詹姆斯·高斯林](https://en.wikipedia.org/wiki/James_Gosling)，俗称高司令。
 
@@ -42,7 +42,8 @@ Java 现在主要有 3 个版本：
 
 无论怎么选择，Java SE 的核心技术是基础！
 
-## 安装 JDK
+## Java 开发环境
+### 安装 JDK
 
 ```ascii
   ┌─    ┌──────────────────────────────────┐
@@ -101,7 +102,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 - javadoc：用于从 Java 源码中自动提取注释并生成文档；
 - jdb：Java 调试器，用于开发阶段的运行调试。
 
-## 运行 Java 程序
+### 运行 Java 程序
 
 ```ascii
 ┌──────────────────┐
@@ -129,7 +130,7 @@ Java 源码本质上是一个文本文件，我们需要先用 `javac` 把 `Hell
 
 有一些童鞋可能知道，直接运行 `java Hello.java` 也是可以的。这是从 Java 11 新增的一个功能，它可以直接运行一个单文件源码！需要注意的是，在实际项目中，单个不依赖第三方库的 Java 源码是非常罕见的，所以，绝大多数情况下，我们无法直接运行一个 Java 源码文件，原因是它需要依赖其他的库。
 
-## 使用 IDE
+### 使用 IDE
 
 IDE 是集成开发环境：Integrated Development Environment 的缩写。
 
@@ -149,8 +150,9 @@ IDE 是集成开发环境：Integrated Development Environment 的缩写。
 - NetBeans
   
   最早由 SUN 公司开发的开源 IDE，由于使用人数较少，目前已不再流行。
-  
-## Java 命名规范
+ 
+## Java 规范
+### 命名规范
 
 Java 的命名规范：
 - 包名：所有字母都小写，多个单词之间用 `.` 分隔，例如：`com.example.hello`；
@@ -173,7 +175,7 @@ Java 的命名规范：
 
 现在开始，我们可以编写 Java 代码了。
 
-## Javadoc 支持的 HTML 标签
+### Javadoc 支持的 HTML 标签
 
 在 Javadoc 中是可以使用部分 HTML 标签 的，这样可以让生成的 API 文档更美观、可读性更高。
 
@@ -193,6 +195,6 @@ Java 的命名规范：
 
 ---
 
-## 参考文献
+参考文献
 
 1. 廖雪峰. Java 教程. https://liaoxuefeng.com/books/java/introduction/index.html

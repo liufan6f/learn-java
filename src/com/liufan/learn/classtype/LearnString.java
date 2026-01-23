@@ -6,8 +6,10 @@ import com.liufan.learn.LearnVar;
  * 字符串
  * <p>
  * 和 <code>char</code> 类型不同，字符串 <code>String</code> 是引用类型。
- * Java 的字符串除了是一个引用类型外，还有个重要特点，就是字符串不可变。
+ * <p>
+ * 字符串还有一个重要特点，就是字符串不可变。同时，因为 String 太常用了，所以 Java 提供了"..."这种字符串字面量表示方法。
  * @see com.liufan.learn.basicdata.LearnChar
+ * @see com.liufan.learn.coreclass.CoreString
  */
 public class LearnString extends LearnClass {
 

@@ -10,6 +10,7 @@ import com.liufan.learn.classtype.LearnClass;
 import com.liufan.learn.classtype.LearnString;
 import com.liufan.learn.classtype.LearnArray;
 import com.liufan.learn.classtype.ArrayMultiD;
+import com.liufan.learn.coreclass.CoreString;
 import com.liufan.learn.oop.OOProgramming;
 import com.liufan.learn.processcontrol.LearnIf;
 import com.liufan.learn.processcontrol.LearnSwitch;
@@ -30,7 +31,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            OOProgramming.nestedClass();
+            CoreString.search("hello");
             return;
         }
 
@@ -77,8 +78,9 @@ public class Main {
         ArrayMultiD.array2D();                        // 03.2.5、多维数组 —— 二维数组
         ArrayMultiD.array3D();                        // 03.2.5.1、多维数组 —— 三维数组
 
-        LearnIf.ifPractice(50);                 // 04、条件判断 —— if
-        LearnIf.elseIfPractice(100);            // 04.1、条件判断 —— if 串联
+        // 04、流程控制
+        LearnIf.ifPractice(50);                 // 04.1.1、条件判断 —— if
+        LearnIf.elseIfPractice(100);            // 04.1.2、条件判断 —— if 串联
         LearnSwitch.practice(1, "apple"); // 04.2、条件判断 —— switch（多重选择）
         LearnSwitch.practiceJava12("apple");     // 04.2.1、条件判断 —— switch（模式匹配）
         LearnSwitch.practiceReturn("apple");     // 04.2.2、switch 返回值
@@ -114,5 +116,9 @@ public class Main {
         OOProgramming.scope();                  // 05.9.1、作用域 —— public、protected、private、package
         OOProgramming.scope("name");      // 05.9.2、作用域 —— 局部变量
         OOProgramming.nestedClass();            // 05.10、内部类（nested class）
+
+        // 06、Java 核心类
+        CoreString.compare("hello"); // 06.1.1、字符串（String）比较
+        CoreString.search("hello");  // 06.1.2、字符串（String）搜索子串、包含子串、提取子串
 	}
 }

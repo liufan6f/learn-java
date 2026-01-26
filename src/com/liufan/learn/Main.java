@@ -11,6 +11,8 @@ import com.liufan.learn.classtype.LearnString;
 import com.liufan.learn.classtype.LearnArray;
 import com.liufan.learn.classtype.ArrayMultiD;
 import com.liufan.learn.coreclass.CoreString;
+import com.liufan.learn.coreclass.LearnStringBuilder;
+import com.liufan.learn.coreclass.LearnStringJoiner;
 import com.liufan.learn.oop.OOProgramming;
 import com.liufan.learn.processcontrol.LearnIf;
 import com.liufan.learn.processcontrol.LearnSwitch;
@@ -27,11 +29,11 @@ public class Main {
      * public static void main(String[] args) 是 Java 程序的固定入口方法，总是从 main 方法开始执行。
      */
 	public static void main(String[] args) {
-        System.out.println("Hello, world! 你好，世界！");
+        // System.out.println("Hello, world! 你好，世界！");
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            CoreString.search("hello");
+            LearnStringJoiner.practice();
             return;
         }
 
@@ -118,7 +120,14 @@ public class Main {
         OOProgramming.nestedClass();            // 05.10、内部类（nested class）
 
         // 06、Java 核心类
-        CoreString.compare("hello"); // 06.1.1、字符串（String）比较
-        CoreString.search("hello");  // 06.1.2、字符串（String）搜索子串、包含子串、提取子串
+        CoreString.compare();          // 06.1.1、字符串（String）比较
+        CoreString.searchAndSub();     // 06.1.2、字符串（String）包含子串、搜索子串、提取子串、替换子串
+        CoreString.trimAndStrip();     // 06.1.3、字符串（String）移除首尾空白字符
+        CoreString.splitAndJoin();     // 06.1.4、字符串（String）分割字符串、拼接字符串
+        CoreString.format();           // 06.1.5、字符串（String）格式化字符串
+        CoreString.valueOf();          // 06.1.6、字符串（String）类型转换
+        CoreString.code();             // 06.1.7、字符串（String）字符串编码
+        LearnStringBuilder.practice(); // 06.1.8、高效拼接字符串（StringBuilder）
+        LearnStringJoiner.practice();  // 06.1.9、分隔符拼接数组（StringJoiner）
 	}
 }

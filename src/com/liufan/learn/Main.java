@@ -11,6 +11,7 @@ import com.liufan.learn.classtype.LearnString;
 import com.liufan.learn.classtype.LearnArray;
 import com.liufan.learn.classtype.ArrayMultiD;
 import com.liufan.learn.coreclass.CoreString;
+import com.liufan.learn.coreclass.LearnEnum;
 import com.liufan.learn.coreclass.LearnJavaBean;
 import com.liufan.learn.coreclass.LearnStringBuilder;
 import com.liufan.learn.coreclass.LearnStringJoiner;
@@ -35,7 +36,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            LearnJavaBean.enumProperty();
+            LearnEnum.method();
             return;
         }
 
@@ -137,5 +138,8 @@ public class Main {
         WrapperClass.unsignedInt();       // 06.2.3、包装类型（Wrapper Class）无符号整型
         LearnJavaBean.learn();            // 06.3、JavaBean —— 属性（property）
         LearnJavaBean.enumProperty();     // 06.3.1、JavaBean —— 获取属性列表
+        LearnEnum.practice();             // 06.4、枚举类（enum）
+        LearnEnum.equals();               // 06.4.1、枚举类（enum）比较
+        LearnEnum.method();               // 06.4.2、枚举类（enum）常用方法
 	}
 }

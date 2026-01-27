@@ -31,6 +31,7 @@ public class LearnClass {
      * 在 Java 中，判断基本类型的变量是否相等，可以使用<code>==</code>运算符。但是，判断引用类型的变量是否相等，
      * <code>==</code>表示“引用是否相等”，或者说，是否指向同一个对象。
      * 要判断引用类型的变量内容是否相等，必须使用<code>equals()</code>方法
+     * @see com.liufan.learn.coreclass.LearnEnum#equals()
      */
     public static void equals() {
         // 例如，下面的两个 String 类型，它们的内容是相同的，但是，分别指向不同的对象，用 == 判断，结果为 false：

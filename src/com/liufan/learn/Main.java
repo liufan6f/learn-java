@@ -11,8 +11,10 @@ import com.liufan.learn.classtype.LearnString;
 import com.liufan.learn.classtype.LearnArray;
 import com.liufan.learn.classtype.ArrayMultiD;
 import com.liufan.learn.coreclass.CoreString;
+import com.liufan.learn.coreclass.LearnJavaBean;
 import com.liufan.learn.coreclass.LearnStringBuilder;
 import com.liufan.learn.coreclass.LearnStringJoiner;
+import com.liufan.learn.coreclass.WrapperClass;
 import com.liufan.learn.oop.OOProgramming;
 import com.liufan.learn.processcontrol.LearnIf;
 import com.liufan.learn.processcontrol.LearnSwitch;
@@ -33,7 +35,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            LearnStringJoiner.practice();
+            LearnJavaBean.enumProperty();
             return;
         }
 
@@ -46,7 +48,7 @@ public class Main {
         LearnVar.varPractice();   // 01.1、变量 —— var 关键字
         LearnVar.finalPractice(); // 01.2、常量 —— final 修饰符
 
-        BasicData.learn();                                  // 02、基本数据类型
+        BasicData.learn();                                  // 02、基本类型
         LearnInteger.practice();                            // 02.1、整型
         LearnInteger.Arithmetic.fourFundamentalRules();     // 02.1.1、四则运算
         LearnInteger.Arithmetic.numericOverflow();          // 02.1.2、数值溢出
@@ -117,17 +119,23 @@ public class Main {
         OOProgramming.learnPackage();           // 05.9、包（package）
         OOProgramming.scope();                  // 05.9.1、作用域 —— public、protected、private、package
         OOProgramming.scope("name");      // 05.9.2、作用域 —— 局部变量
-        OOProgramming.nestedClass();            // 05.10、内部类（nested class）
+        OOProgramming.nestedClass();            // 05.10、内部类（nested class）嵌套类
 
         // 06、Java 核心类
-        CoreString.compare();          // 06.1.1、字符串（String）比较
-        CoreString.searchAndSub();     // 06.1.2、字符串（String）包含子串、搜索子串、提取子串、替换子串
-        CoreString.trimAndStrip();     // 06.1.3、字符串（String）移除首尾空白字符
-        CoreString.splitAndJoin();     // 06.1.4、字符串（String）分割字符串、拼接字符串
-        CoreString.format();           // 06.1.5、字符串（String）格式化字符串
-        CoreString.valueOf();          // 06.1.6、字符串（String）类型转换
-        CoreString.code();             // 06.1.7、字符串（String）字符串编码
-        LearnStringBuilder.practice(); // 06.1.8、高效拼接字符串（StringBuilder）
-        LearnStringJoiner.practice();  // 06.1.9、分隔符拼接数组（StringJoiner）
+        CoreString.compare();             // 06.1.1、字符串（String）比较
+        CoreString.searchAndSub();        // 06.1.2、字符串（String）包含子串、搜索子串、提取子串、替换子串
+        CoreString.trimAndStrip();        // 06.1.3、字符串（String）移除首尾空白字符
+        CoreString.splitAndJoin();        // 06.1.4、字符串（String）分割字符串、拼接字符串
+        CoreString.format();              // 06.1.5、字符串（String）格式化字符串
+        CoreString.valueOf();             // 06.1.6、字符串（String）类型转换
+        CoreString.code();                // 06.1.7、字符串（String）字符串编码
+        LearnStringBuilder.practice();    // 06.1.8、高效拼接字符串（StringBuilder）
+        LearnStringJoiner.practice();     // 06.1.9、分隔符拼接数组（StringJoiner）
+        WrapperClass.learn();             // 06.2、包装类型（Wrapper Class）自动装箱、自动拆箱
+        WrapperClass.immutableProperty(); // 06.2.1、包装类型（Wrapper Class）不可变
+        WrapperClass.parse();             // 06.2.2、包装类型（Wrapper Class）进制转换
+        WrapperClass.unsignedInt();       // 06.2.3、包装类型（Wrapper Class）无符号整型
+        LearnJavaBean.learn();            // 06.3、JavaBean —— 属性（property）
+        LearnJavaBean.enumProperty();     // 06.3.1、JavaBean —— 获取属性列表
 	}
 }

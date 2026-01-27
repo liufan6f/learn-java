@@ -128,12 +128,12 @@ public final class OOProgramming {
     /**
      * 参数绑定
      * <ul>
-     *     <li>基本数据类型参数的传递，是值的复制，双方各自的后续修改，互不影响；</li>
+     *     <li>基本类型参数的传递，是值的复制，双方各自的后续修改，互不影响；</li>
      *     <li>引用类型参数的传递，调用方的变量，和接收方的参数变量，指向的是同一个对象。双方任意一方对这个对象的修改，都会影响对方（因为指向同一个对象）。</li>
      * </ul>
      */
     public static void parmaBinding() {
-        // 基本数据类型参数绑定
+        // 基本类型参数绑定
         var bai = new com.liufan.learn.oop.method.Person();
         String xiaoBai = "Xiao Bai";
         bai.setName(xiaoBai);

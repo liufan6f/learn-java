@@ -8,7 +8,7 @@ package com.liufan.learn.basicdata;
  * <p>
  * 在 Java 中，字符和字符串是两个不同的类型：
  * <ul>
- *     <li>字符类型 <code>char</code> 是基本数据类型，一个 <code>char</code> 保存一个 Unicode 字符</li>
+ *     <li>字符类型 <code>char</code> 是基本类型，一个 <code>char</code> 保存一个 Unicode 字符</li>
  *     <li>字符串 <code>String</code> 是引用类型</li>
  * </ul>
  * @see com.liufan.learn.classtype.LearnString

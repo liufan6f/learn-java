@@ -5,7 +5,7 @@ package com.liufan.learn;
  * <p>
  * 在 Java 中分为两种：
  * <ol>
- *     <li>基本数据类型的变量，变量是“持有”某个数值；</li>
+ *     <li>基本类型的变量，变量是“持有”某个数值；</li>
  *     <li>引用类型的变量，变量是“指向”某个对象，它也可以指向一个空值 <code>null</code>，表示不存在，不指向任何对象。</li>
  * </ol>
  * @see com.liufan.learn.basicdata.BasicData
@@ -14,7 +14,7 @@ package com.liufan.learn;
 public class LearnVar {
 
     /**
-     * 基本数据类型的变量“持有”某个数值；引用类型的变量“指向”某个对象
+     * 基本类型的变量“持有”某个数值；引用类型的变量“指向”某个对象
      * @see com.liufan.learn.classtype.LearnString#immutableProperty()
      * @see com.liufan.learn.classtype.LearnArray#immutableProperty()
      * @see com.liufan.learn.classtype.LearnArray#stringArray()

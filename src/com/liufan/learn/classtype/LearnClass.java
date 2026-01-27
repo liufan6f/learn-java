@@ -3,7 +3,7 @@ package com.liufan.learn.classtype;
 /**
  * 引用类型
  * <p>
- * 除了基本数据类型的变量，剩下的都是引用类型。
+ * 除了基本类型的变量，剩下的都是引用类型（所有的 class 和 interface 类型）。
  * <p>
  * 引用类型的变量可以指向一个空值 <code>null</code>，它表示不存在，即该变量不指向任何对象。
  * @see LearnString
@@ -22,13 +22,13 @@ public class LearnClass {
 //        } else {
 //            System.out.println("sn is null");
 //        }
-        System.out.println("在 Java 中除了基本数据类型的变量，剩下的都是引用类型。");
+        System.out.println("在 Java 中除了基本类型的变量，剩下的都是引用类型。");
     }
 
     /**
      * 判断引用类型相等
      * <p>
-     * 在 Java 中，判断基本数据类型的变量是否相等，可以使用<code>==</code>运算符。但是，判断引用类型的变量是否相等，
+     * 在 Java 中，判断基本类型的变量是否相等，可以使用<code>==</code>运算符。但是，判断引用类型的变量是否相等，
      * <code>==</code>表示“引用是否相等”，或者说，是否指向同一个对象。
      * 要判断引用类型的变量内容是否相等，必须使用<code>equals()</code>方法
      */

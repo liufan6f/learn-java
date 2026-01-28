@@ -13,6 +13,7 @@ import com.liufan.learn.classtype.ArrayMultiD;
 import com.liufan.learn.coreclass.CoreString;
 import com.liufan.learn.coreclass.LearnEnum;
 import com.liufan.learn.coreclass.LearnJavaBean;
+import com.liufan.learn.coreclass.LearnRecord;
 import com.liufan.learn.coreclass.LearnStringBuilder;
 import com.liufan.learn.coreclass.LearnStringJoiner;
 import com.liufan.learn.coreclass.WrapperClass;
@@ -36,7 +37,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            LearnEnum.method();
+            LearnRecord.practice();
             return;
         }
 
@@ -141,5 +142,6 @@ public class Main {
         LearnEnum.practice();             // 06.4、枚举类（enum）
         LearnEnum.equals();               // 06.4.1、枚举类（enum）比较
         LearnEnum.method();               // 06.4.2、枚举类（enum）常用方法
+        LearnRecord.practice();           // 06.5、记录类（record）
 	}
 }

@@ -1,7 +1,5 @@
 package com.liufan.learn.coreclass;
 
-import com.liufan.learn.classtype.LearnString;
-
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
@@ -29,9 +27,8 @@ import java.util.Arrays;
  *         private final byte coder; // 0 = LATIN1, 1 = UTF16
  *     }
  * </pre>
- * @see LearnString
  */
-public class CoreString extends LearnString {
+public class CoreString extends com.liufan.learn.classtype.LearnString {
 
     /**
      * 字符串比较

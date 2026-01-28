@@ -1,12 +1,9 @@
 package com.liufan.learn.coreclass;
 
-import com.liufan.learn.basicdata.BasicData;
-
 /**
  * 包装类型
- * @see BasicData
  */
-public class WrapperClass extends BasicData {
+public class WrapperClass extends com.liufan.learn.basicdata.BasicData {
     public static void learn() {
         /*
         我们已经知道，Java 的数据类型分两种：

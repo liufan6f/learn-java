@@ -1,14 +1,11 @@
 package com.liufan.learn.coreclass;
 
-import com.liufan.learn.classtype.LearnClass;
-
 /**
  * 枚举类（enum）
  * <p>
  * 使用 enum 定义的枚举类是一种引用类型
- * @see LearnClass
  */
-public class LearnEnum extends LearnClass {
+public class LearnEnum extends com.liufan.learn.classtype.LearnClass {
     public static void practice() {
         /*
         在 Java 中，我们可以通过 static final 来定义常量，如：

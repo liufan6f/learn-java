@@ -10,7 +10,7 @@ import java.beans.PropertyDescriptor;
  * <p>
  * JavaBean 是一种符合命名规范的 class，它通过 getter 和 setter 来定义属性。
  */
-public class LearnJavaBean {
+public class LearnJavaBean extends com.liufan.learn.classtype.LearnClass {
     public static void learn() {
         /*
         在 Java 中，有很多 class 的定义都符合这样的规范：

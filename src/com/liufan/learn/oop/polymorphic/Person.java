@@ -24,6 +24,7 @@ public class Person {
 
     @Override
     public boolean equals(Object obj) {
+        if (this == obj) return true; // 检查内存地址是否相同
         // 当且仅当 obj 为 Person 类型
         if (obj instanceof Person p) {
             // 并且 name 字段相同时，返回 true

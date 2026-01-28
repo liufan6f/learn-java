@@ -11,6 +11,8 @@ import com.liufan.learn.classtype.LearnString;
 import com.liufan.learn.classtype.LearnArray;
 import com.liufan.learn.classtype.ArrayMultiD;
 import com.liufan.learn.coreclass.CoreString;
+import com.liufan.learn.coreclass.LearnBigDecimal;
+import com.liufan.learn.coreclass.LearnBigInteger;
 import com.liufan.learn.coreclass.LearnEnum;
 import com.liufan.learn.coreclass.LearnJavaBean;
 import com.liufan.learn.coreclass.LearnRecord;
@@ -37,7 +39,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            LearnRecord.practice();
+            LearnBigDecimal.equals();
             return;
         }
 
@@ -143,5 +145,8 @@ public class Main {
         LearnEnum.equals();               // 06.4.1、枚举类（enum）比较
         LearnEnum.method();               // 06.4.2、枚举类（enum）常用方法
         LearnRecord.practice();           // 06.5、记录类（record）
+        LearnBigInteger.practice();       // 06.6、大整数（BigInteger）
+        LearnBigDecimal.practice();       // 06.7、大浮点数（BigDecimal）
+        LearnBigDecimal.equals();         // 06.7.1、大浮点数（BigDecimal）比较
 	}
 }

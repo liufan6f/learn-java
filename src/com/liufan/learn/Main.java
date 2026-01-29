@@ -20,6 +20,7 @@ import com.liufan.learn.coreclass.LearnStringBuilder;
 import com.liufan.learn.coreclass.LearnStringJoiner;
 import com.liufan.learn.coreclass.Utils;
 import com.liufan.learn.coreclass.WrapperClass;
+import com.liufan.learn.exception.LearnException;
 import com.liufan.learn.oop.OOProgramming;
 import com.liufan.learn.processcontrol.LearnIf;
 import com.liufan.learn.processcontrol.LearnSwitch;
@@ -40,7 +41,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            Utils.secureRandom();
+            LearnException.practice();
             return;
         }
 
@@ -153,5 +154,8 @@ public class Main {
         Utils.hexFormat();                // 06.8.2、常用工具类 —— HexFormat
         Utils.random();                   // 06.8.3、常用工具类 —— Random
         Utils.secureRandom();             // 06.8.4、常用工具类 —— SecureRandom
+
+        // 07、异常
+        LearnException.practice();        // 07、异常（Exception）
 	}
 }

@@ -83,7 +83,7 @@ public class Utils {
 
         // 十六进制字符串 转 byte[] 数组
         byte[] bs = HexFormat.of().parseHex("48656c6c6f");
-        System.out.println(new String(bs));      // Hello
+        System.out.println(Arrays.toString(bs));
     }
 
     /**

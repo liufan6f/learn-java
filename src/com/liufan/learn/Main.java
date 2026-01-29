@@ -41,7 +41,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            LearnException.practice();
+            LearnException.finallyLearn();
             return;
         }
 

@@ -276,8 +276,7 @@ public class LearnException {
         String s = """
                 注意finally有几个特点：
                 1、finally语句不是必须的，可写可不写；
-                2、finally总是最后执行。
-                """;
+                2、finally总是最后执行。""";
         System.out.println(s);
     }
 }

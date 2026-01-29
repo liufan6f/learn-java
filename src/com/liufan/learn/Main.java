@@ -18,6 +18,7 @@ import com.liufan.learn.coreclass.LearnJavaBean;
 import com.liufan.learn.coreclass.LearnRecord;
 import com.liufan.learn.coreclass.LearnStringBuilder;
 import com.liufan.learn.coreclass.LearnStringJoiner;
+import com.liufan.learn.coreclass.Utils;
 import com.liufan.learn.coreclass.WrapperClass;
 import com.liufan.learn.oop.OOProgramming;
 import com.liufan.learn.processcontrol.LearnIf;
@@ -39,7 +40,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            LearnBigDecimal.equals();
+            Utils.secureRandom();
             return;
         }
 
@@ -148,5 +149,9 @@ public class Main {
         LearnBigInteger.practice();       // 06.6、大整数（BigInteger）
         LearnBigDecimal.practice();       // 06.7、大浮点数（BigDecimal）
         LearnBigDecimal.equals();         // 06.7.1、大浮点数（BigDecimal）比较
+        Utils.math();                     // 06.8.1、常用工具类 —— Math
+        Utils.hexFormat();                // 06.8.2、常用工具类 —— HexFormat
+        Utils.random();                   // 06.8.3、常用工具类 —— Random
+        Utils.secureRandom();             // 06.8.4、常用工具类 —— SecureRandom
 	}
 }

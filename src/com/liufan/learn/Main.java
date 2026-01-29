@@ -157,7 +157,7 @@ public class Main {
 
         // 07、异常
         LearnException.practice();        // 07、捕获异常（Exception）
-        LearnException.multiCatch();      // 07.1、捕获异常（Exception）—— 多 catch
-        LearnException.finallyPractice(); // 07.2、捕获异常（Exception）—— finally 语句
+        LearnException.multiCatch();      // 07.1、捕获异常（Exception）—— 捕获多种异常（多 catch）
+        LearnException.finallyLearn(); // 07.2、捕获异常（Exception）—— finally 语句
 	}
 }

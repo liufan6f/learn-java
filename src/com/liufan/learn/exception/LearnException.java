@@ -167,7 +167,7 @@ public class LearnException {
     }
 
     /**
-     * 多 catch
+     * 捕获多种异常
      * <p>
      * 可以使用多个catch语句，每个catch分别捕获对应的Exception及其子类。JVM在捕获到异常后，会从上到下匹配catch语句，
      * 匹配到某个catch后，执行catch代码块，然后不再继续匹配。
@@ -200,12 +200,84 @@ public class LearnException {
         }
          */
         System.out.println("存在多个catch的时候，catch的顺序非常重要：子类必须写在前面。");
+
+        /*
+        如果某些异常的处理逻辑相同，但是异常本身不存在继承关系，那么就得编写多条catch子句：
+        try {
+            process1();
+            process2();
+            process3();
+        } catch (IOException e) {
+            System.out.println("Bad input");
+        } catch (NumberFormatException e) {
+            System.out.println("Bad input");
+        } catch (Exception e) {
+            System.out.println("Unknown error");
+        }
+
+        因为处理IOException和NumberFormatException的代码是相同的，所以我们可以把它两用|合并到一起：
+        try {
+            process1();
+            process2();
+            process3();
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("Bad input");
+        } catch (Exception e) {
+            System.out.println("Unknown error");
+        }
+         */
     }
 
     /**
      * finally语句
+     * <p>
+     * 无论是否有异常发生，如果我们都希望执行一些语句时，使用finally语句。
      */
-    public static void finallyPractice() {
+    public static void finallyLearn() {
+        /*
+        try {
+            process1();
+            process2();
+            process3();
+            System.out.println("END");
+        } catch (UnsupportedEncodingException e) {
+            System.out.println("Bad encoding");
+            System.out.println("END");
+        } catch (IOException e) {
+            System.out.println("IO error");
+            System.out.println("END");
+        }
+        上述代码无论是否发生异常，都会执行System.out.println("END");这条语句。要消除这些重复的代码？就可以通过finally语句。
 
+        try {
+            process1();
+            process2();
+            process3();
+        } catch (UnsupportedEncodingException e) {
+            System.out.println("Bad encoding");
+        } catch (IOException e) {
+            System.out.println("IO error");
+        } finally {
+            System.out.println("END");
+        }
+        如果没有发生异常，就正常执行try { ... }语句块，然后执行finally。如果发生了异常，就中断执行try { ... }语句块，
+        然后跳转执行匹配的catch语句块，最后执行finally。可见，finally是用来保证一些代码必须执行的。
+
+        某些情况下，可以没有catch，只使用try ... finally结构。例如：
+        void process(String file) throws IOException {
+            try {
+                ...
+            } finally {
+                System.out.println("END");
+            }
+        }
+        因为方法声明了可能抛出的异常，所以可以不写catch。
+         */
+        String s = """
+                注意finally有几个特点：
+                1、finally语句不是必须的，可写可不写；
+                2、finally总是最后执行。
+                """;
+        System.out.println(s);
     }
 }

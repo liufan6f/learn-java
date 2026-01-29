@@ -165,4 +165,47 @@ public class LearnException {
         // 也可以不捕获，而是在方法定义处用throws表示方法可能会抛出UnsupportedEncodingException
         return s.getBytes("GBK");
     }
+
+    /**
+     * 多 catch
+     * <p>
+     * 可以使用多个catch语句，每个catch分别捕获对应的Exception及其子类。JVM在捕获到异常后，会从上到下匹配catch语句，
+     * 匹配到某个catch后，执行catch代码块，然后不再继续匹配。
+     */
+    public static void multiCatch() {
+        /*
+        存在多个catch的时候，catch的顺序非常重要：子类必须写在前面。例如：
+
+        try {
+            process1();
+            process2();
+            process3();
+        } catch (IOException e) {
+            System.out.println("IO error");
+        } catch (UnsupportedEncodingException e) { // 永远捕获不到
+            System.out.println("Bad encoding");
+        }
+
+        对于上面的代码，UnsupportedEncodingException异常是永远捕获不到的，因为它是IOException的子类。
+        当抛出UnsupportedEncodingException异常时，会被catch (IOException e) { ... }捕获并执行。正确的写法是把子类放到前面。
+
+        try {
+            process1();
+            process2();
+            process3();
+        } catch (UnsupportedEncodingException e) { // 永远捕获不到
+            System.out.println("Bad encoding");
+        } catch (IOException e) {
+            System.out.println("IO error");
+        }
+         */
+        System.out.println("存在多个catch的时候，catch的顺序非常重要：子类必须写在前面。");
+    }
+
+    /**
+     * finally语句
+     */
+    public static void finallyPractice() {
+
+    }
 }

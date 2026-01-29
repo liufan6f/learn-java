@@ -156,6 +156,8 @@ public class Main {
         Utils.secureRandom();             // 06.8.4、常用工具类 —— SecureRandom
 
         // 07、异常
-        LearnException.practice();        // 07、异常（Exception）
+        LearnException.practice();        // 07、捕获异常（Exception）
+        LearnException.multiCatch();      // 07.1、捕获异常（Exception）—— 多 catch
+        LearnException.finallyPractice(); // 07.2、捕获异常（Exception）—— finally 语句
 	}
 }

@@ -394,10 +394,10 @@ oop-module
 ├── build.sh
 └── src
     ├── com
-    │   └── itranswarp
-    │       └── sample
-    │           ├── Greeting.java
-    │           └── Main.java
+    │   └── itranswarp
+    │       └── sample
+    │           ├── Greeting.java
+    │           └── Main.java
     └── module-info.java
 ```    
 
@@ -443,18 +443,18 @@ $ javac -d bin src/module-info.java src/com/itranswarp/sample/*.java
 ```ascii
 oop-module
 ├── bin
-│   ├── com
-│   │   └── itranswarp
-│   │       └── sample
-│   │           ├── Greeting.class
-│   │           └── Main.class
-│   └── module-info.class
+│   ├── com
+│   │   └── itranswarp
+│   │       └── sample
+│   │           ├── Greeting.class
+│   │           └── Main.class
+│   └── module-info.class
 └── src
     ├── com
-    │   └── itranswarp
-    │       └── sample
-    │           ├── Greeting.java
-    │           └── Main.java
+    │   └── itranswarp
+    │       └── sample
+    │           ├── Greeting.java
+    │           └── Main.java
     └── module-info.java
 ```
 

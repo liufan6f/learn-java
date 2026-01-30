@@ -12,7 +12,7 @@ public class CommandLine {
         /*
         我们可以利用接收到的命令行参数，根据不同的参数执行不同的代码。例如，实现一个 -version 参数，打印程序版本号
         下面这个程序必须在命令行执行，我们先编译它，在 learn-java 目录下执行：
-        $ javac -cp . -sourcepath src/main/java -d bin src/main/java/com/liufan/learn/Main.java
+        $ javac -cp . -sourcepath src -d bin src/com/liufan/learn/Main.java
 
         然后，执行的时候，给它传递一个 -version 参数：
         $ java -cp bin com.liufan.learn.Main -version

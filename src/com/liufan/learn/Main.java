@@ -21,6 +21,7 @@ import com.liufan.learn.coreclass.LearnStringJoiner;
 import com.liufan.learn.coreclass.Utils;
 import com.liufan.learn.coreclass.WrapperClass;
 import com.liufan.learn.exception.LearnException;
+import com.liufan.learn.exception.LearnNullPointerException;
 import com.liufan.learn.oop.OOProgramming;
 import com.liufan.learn.processcontrol.LearnIf;
 import com.liufan.learn.processcontrol.LearnSwitch;
@@ -41,7 +42,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            LearnException.finallyLearn();
+            LearnNullPointerException.practice();
             return;
         }
 
@@ -156,8 +157,13 @@ public class Main {
         Utils.secureRandom();             // 06.8.4、常用工具类 —— SecureRandom
 
         // 07、异常
-        LearnException.practice();        // 07、捕获异常（Exception）
-        LearnException.multiCatch();      // 07.1、捕获异常（Exception）—— 捕获多种异常（多 catch）
-        LearnException.finallyLearn(); // 07.2、捕获异常（Exception）—— finally 语句
+        LearnException.practice();            // 07、捕获异常（Exception）
+        LearnException.multiCatch();          // 07.1、异常（Exception）—— 捕获多种异常（多 catch）
+        LearnException.finallyLearn();        // 07.2、异常（Exception）—— finally 语句
+        LearnException.transmit();            // 07.3、异常（Exception）的传播
+        LearnException.throwPractice();       // 07.4、异常（Exception）抛出（throw）
+        LearnException.suppressed();          // 07.5、异常（Exception）屏蔽
+        LearnException.custom();              // 07.6、异常（Exception）—— 自定义异常
+        LearnNullPointerException.practice(); // 07.7、空指针异常（NullPointerException）
 	}
 }

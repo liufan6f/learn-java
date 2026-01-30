@@ -209,7 +209,6 @@ public final class OOProgramming {
      * 继承（extends）、super 关键字
      * <p>
      * 继承是面向对象编程的一种强大的代码复用方式，Java 只允许单继承，所有类最终的根类是 Object
-     * @see com.liufan.learn.oop.learnextends.Student
      */
     public static void extendsPractice() {
         var s = new com.liufan.learn.oop.learnextends.Student("Xiao Ming", 18, 100);

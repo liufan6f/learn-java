@@ -125,7 +125,7 @@ public class LearnException {
 
             这种捕获后不处理的方式是非常不好的，即使真的什么也做不了，也要先把异常记录下来：
              */
-            e.printStackTrace(); // 先记下来再说，所有异常都可以调用printStackTrace()方法打印异常栈，这是一个简单有用的快速打印异常的方法。
+            e.printStackTrace(); // 先记下来再说，所有异常都可以调用printStackTrace()方法打印异常栈，这是一个简单有用的快速打印异常的方法，对于调试非常有用。
             bs = s.getBytes();
         }
         System.out.println(Arrays.toString(bs));
@@ -278,5 +278,158 @@ public class LearnException {
                 1、finally语句不是必须的，可写可不写；
                 2、finally总是最后执行。""";
         System.out.println(s);
+    }
+
+    /**
+     * 异常的传播
+     */
+    public static void transmit() {
+        // 当某个方法抛出了异常时，如果当前方法没有捕获异常，异常就会被抛到上层调用方法，直到遇到某个try...catch被捕获为止
+        try {
+            func1();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private static void func1() {
+        func2();
+    }
+    private static void func2() {
+        Integer.parseInt(null); // 会抛出NumberFormatException
+    }
+
+    /**
+     * 抛出异常
+     */
+    public static void throwPractice() {
+        /*
+        如何抛出异常？
+        当发生错误时，例如，用户输入了非法的字符，我们就可以抛出异常：
+        void process2(String s) {
+            if (s == null) {
+                throw new NullPointerException();
+            }
+        }
+
+        如果一个方法捕获了某个异常后，又在catch子句中抛出新的异常，就相当于把抛出的异常类型“转换”了：
+        void process1(String s) {
+            try {
+                process2();
+            } catch (NullPointerException e) {
+                throw new IllegalArgumentException();
+            }
+        }
+         */
+
+        /*
+        那么，执行这段代码，会抛出IllegalArgumentException异常。
+        这说明新的异常丢失了原始异常信息，我们已经看不到原始异常NullPointerException的信息了。
+         */
+        try {
+            thorwIllegalArgumentException();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private static void throwNullPointerException() {
+        throw new NullPointerException();
+    }
+
+    /**
+     * 如果我们在try或者catch语句块中抛出异常，finally语句是否会执行？
+     */
+    private static void thorwIllegalArgumentException() {
+        try {
+            throwNullPointerException();
+        } catch (NullPointerException e) {
+            System.out.println("catched");
+//            throw new IllegalArgumentException();
+
+            /*
+            为了能追踪到完整的异常栈，将本行代码进行改造：
+            在构造异常的时候，把原始的Exception实例传进去，新的Exception就可以持有原始Exception信息。
+             */
+            if (e.getCause() == null) {
+                // 在代码中获取原始异常可以使用Throwable.getCause()方法。如果返回null，说明已经是“根异常”了。
+                System.out.println(e.toString() + " 已经是根异常了");
+            }
+            throw new IllegalArgumentException(e);
+            // ⚠️所以，捕获到异常并再次抛出时，一定要留住原始异常，否则很难定位第一案发现场！
+
+        } finally {
+
+            /*
+            如果我们在try或者catch语句块中抛出异常，finally语句是否会执行？
+
+            在catch中抛出异常，不会影响finally的执行。JVM会先执行finally，然后抛出异常。
+             */
+            System.out.println("finally END");
+        }
+    }
+
+    /**
+     * 异常屏蔽（Suppressed Exception）
+     * <p>
+     * 绝大多数情况下，在finally中不要抛出异常。因此，我们通常不需要关心Suppressed Exception
+     */
+    public static void suppressed() {
+        // 如果在执行finally语句时抛出异常，那么，catch语句的异常还能否继续抛出？
+//        try {
+//            Integer.parseInt("abc");
+//        } catch (Exception e) {
+//            System.out.println("catched");
+//            throw new RuntimeException(e);
+//        } finally {
+//            System.out.println("finally");
+//            throw new IllegalArgumentException();
+//        }
+        /*
+        执行上述代码发现，异常信息如下，只抛出了 IllegalArgumentException：
+        catched
+        finally
+        Exception in thread "main" java.lang.IllegalArgumentException...
+
+        这说明finally抛出异常后，原来在catch中准备抛出的异常就“消失”了，因为只能抛出一个异常。
+        没有被抛出的异常称为“被屏蔽”的异常（Suppressed Exception）。
+         */
+
+        // 在极少数的情况下，我们需要获知所有的异常。如何保存所有的异常信息？方法是先用origin变量保存原始异常，
+        // 然后调用Throwable.addSuppressed()，把原始异常添加进来，最后在finally抛出：
+        try {
+            addSuppressed(new IllegalArgumentException());
+        } catch (Exception e) {
+            // e.getSuppressed(); // 获取所有的Suppressed Exception
+            e.printStackTrace();
+        }
+        // 当catch和finally都抛出了异常时，虽然catch的异常被屏蔽了，但是，finally抛出的异常仍然包含了它
+        // 绝大多数情况下，在finally中不要抛出异常。因此，我们通常不需要关心Suppressed Exception。
+    }
+    private static void addSuppressed(Exception exception) throws Exception {
+        Exception origin = null;
+        try {
+            Integer.parseInt("abc");
+        } catch (Exception e) {
+            System.out.println("catched");
+            origin = e;
+            throw e;
+        } finally {
+            System.out.println("finally");
+            if (origin != null) {
+                exception.addSuppressed(origin);
+            }
+            throw exception;
+        }
+    }
+
+    /**
+     * 自定义异常
+     */
+    public static void custom() {
+        try {
+            addSuppressed(new MyException());
+        } catch (Exception e) {
+            // e.getSuppressed(); // 获取所有的Suppressed Exception
+            e.printStackTrace();
+        }
     }
 }

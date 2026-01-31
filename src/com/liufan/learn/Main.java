@@ -23,6 +23,9 @@ import com.liufan.learn.coreclass.WrapperClass;
 import com.liufan.learn.exception.LearnAssertion;
 import com.liufan.learn.exception.LearnException;
 import com.liufan.learn.exception.LearnNullPointerException;
+import com.liufan.learn.logging.CommonsLogging;
+import com.liufan.learn.logging.JDKLogging;
+import com.liufan.learn.logging.Log4j;
 import com.liufan.learn.oop.OOProgramming;
 import com.liufan.learn.processcontrol.LearnIf;
 import com.liufan.learn.processcontrol.LearnSwitch;
@@ -43,7 +46,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            LearnAssertion.practice();
+            Log4j.practice();
             return;
         }
 
@@ -167,5 +170,10 @@ public class Main {
         LearnException.custom();              // 07.1.6、异常（Exception）—— 自定义异常
         LearnNullPointerException.practice(); // 07.1.7、空指针异常（NullPointerException）
         LearnAssertion.practice();            // 07.2、断言（Assertion）
+
+        // 08、日志
+        JDKLogging.practice();     // 08.1、java.util.logging.Logger
+        CommonsLogging.practice(); // 08.2、Commons Logging
+        Log4j.practice();          // 08.2.1、Commons Logging + Log4j
 	}
 }

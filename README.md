@@ -2,7 +2,7 @@
 
 学习之前，先来认（膜）识（拜）一下 ：Java 之父，[詹姆斯·高斯林](https://en.wikipedia.org/wiki/James_Gosling)，俗称高司令。
 
-![Java 之父，詹姆斯·高斯林，俗称高司令](res/James_Gosling_2008.jpg)
+![Java 之父，詹姆斯·高斯林，俗称高司令](readme/James_Gosling_2008.jpg)
 
 ## Java 编程语言
 
@@ -261,7 +261,7 @@ package_sample
 
 这里需要特别注意的是，jar 包里的第一层目录，不能是 `bin`，而应该是 `hong`、`ming`、`mr`。如果在 Windows 的资源管理器中看，应该长这样：
 
-![hello.zip.ok](res/good-jar.jpg)
+![hello.zip.ok](readme/good-jar.jpg)
 
 原因是 `hong.Person` 必须按 `hong/Person.class` 存放，而不是 `bin/hong/Person.class`。
 

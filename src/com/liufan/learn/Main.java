@@ -26,6 +26,7 @@ import com.liufan.learn.exception.LearnNullPointerException;
 import com.liufan.learn.logging.CommonsLogging;
 import com.liufan.learn.logging.JDKLogging;
 import com.liufan.learn.logging.Log4j;
+import com.liufan.learn.logging.SLF4J;
 import com.liufan.learn.oop.OOProgramming;
 import com.liufan.learn.processcontrol.LearnIf;
 import com.liufan.learn.processcontrol.LearnSwitch;
@@ -46,7 +47,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            Log4j.practice();
+            SLF4J.practice();
             return;
         }
 
@@ -174,6 +175,7 @@ public class Main {
         // 08、日志
         JDKLogging.practice();     // 08.1、java.util.logging.Logger
         CommonsLogging.practice(); // 08.2、Commons Logging
-        Log4j.practice();          // 08.2.1、Commons Logging + Log4j
+        Log4j.practice();          // 08.2.1、Commons Logging 是日志接口，Log4j 是真正日志实现
+        SLF4J.practice();          // 08.3、SLF4J
 	}
 }

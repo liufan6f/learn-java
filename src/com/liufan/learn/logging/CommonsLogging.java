@@ -37,7 +37,7 @@ import org.apache.commons.logging.LogFactory;
  */
 public final class CommonsLogging {
 
-    public static final Log log = LogFactory.getLog(CommonsLogging.class);
+    private static final Log log = LogFactory.getLog(CommonsLogging.class);
 
     /**
      * 使用Commons Logging时，如果在静态方法中引用Log，通常直接定义一个静态类型变量

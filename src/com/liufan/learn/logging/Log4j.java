@@ -51,7 +51,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 /**
- * Log4j，Commons Logging 的真正日志实现。
+ * Log4j，Commons Logging是日志接口，Log4j是真正日志实现。
  * <p>
  * ✅最佳实践：
  * <p>

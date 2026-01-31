@@ -43,8 +43,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-//            LearnAssertion.practice();
-            com.liufan.learn.CommandLine.practice(args);
+            LearnAssertion.practice();
             return;
         }
 

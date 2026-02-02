@@ -28,8 +28,8 @@ $ java -cp "bin:libs/commons-logging-1.3.5.jar:libs/slf4j-api-2.0.9.jar:libs/log
 $ rm -rf bin
  */
 
-//import org.apache.commons.logging.Log;
-//import org.apache.commons.logging.LogFactory;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,7 +45,7 @@ import com.liufan.learn.oop.method.Person;
  * @see Log4j
  */
 public final class SLF4J {
-//    private static final Log log = LogFactory.getLog(SLF4J.class);
+    private static final Log log = LogFactory.getLog(SLF4J.class);
     private static final Logger logger = LoggerFactory.getLogger(SLF4J.class);
     public static void practice() {
         Person p = new Person();
@@ -55,7 +55,7 @@ public final class SLF4J {
 
         // SLF4J对Commons Logging的接口有何改进？
         // 在Commons Logging中，我们要打印日志，有时候得这么写：
-//        log.info("Set age " + age + " for Person " + p.getName() + " ok.");
+        log.info("Set age " + age + " for Person " + p.getName() + " ok.");
         // 拼字符串是一个非常麻烦的事情，所以SLF4J的日志接口改进成这样了：
         logger.info("Set age {} for Person {} ok.", age, p.getName());
     }

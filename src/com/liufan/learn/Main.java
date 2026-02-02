@@ -47,14 +47,14 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            SLF4J.practice();
+            LearnAssertion.practice();
             return;
         }
 
         // 暂未编号分类
-        ScannerPrint.print();                        // 输出
-        ScannerPrint.scanner();                      // 输入
-        com.liufan.learn.CommandLine.practice(args); // 命令行参数，⚠️在命令行编译时，同一个包内的类也需要全名
+        ScannerPrint.print();       // 输出
+        ScannerPrint.scanner();     // 输入
+        CommandLine.practice(args); // 命令行参数
 
         LearnVar.practice();      // 01、变量
         LearnVar.varPractice();   // 01.1、变量 —— var 关键字
@@ -176,6 +176,6 @@ public class Main {
         JDKLogging.practice();     // 08.1、java.util.logging.Logger
         CommonsLogging.practice(); // 08.2、Commons Logging
         Log4j.practice();          // 08.2.1、Commons Logging 是日志接口，Log4j 是真正日志实现
-        SLF4J.practice();          // 08.3、SLF4J
+        SLF4J.practice();          // 08.3、SLF4J 是日志接口，Logback 是真正日志实现
 	}
 }

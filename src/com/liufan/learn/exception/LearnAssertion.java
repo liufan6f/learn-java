@@ -37,11 +37,12 @@ public class LearnAssertion {
 
         这是因为JVM默认关闭断言指令，即遇到assert语句就自动忽略了，不执行。
         要执行assert语句，必须给Java虚拟机传递-enableassertions（可简写为-ea）参数启用断言。所以，上述程序必须在命令行下运行才有效果。
-        在 learn-java 目录下执行编译：
-        $ javac -cp . -sourcepath src -d bin src/com/liufan/learn/Main.java
 
-        然后执行：
-        $ java -ea -cp bin com.liufan.learn.Main
+        在 learn-java 目录下执行编译：
+        $ javac -d bin -cp "libs/commons-logging-1.3.5.jar:libs/slf4j-api-2.0.9.jar:libs/log4j/*:libs/logback/*:src" src/com/liufan/learn/Main.java
+
+        编译成功后执行：
+        $ java -ea -cp "bin:libs/commons-logging-1.3.5.jar:libs/slf4j-api-2.0.9.jar:libs/log4j/*:libs/logback/*:src" com.liufan.learn.Main
 
         如果需要清理编译生成的 bin 目录，可以使用以下命令：
         $ rm -rf bin

@@ -25,7 +25,7 @@ log.info("User signed in.");
 上述结构虽然复杂，但我们在实际使用的时候，并不需要关心Log4j的API，而是通过配置文件来配置它。
 
 以XML配置为例，使用Log4j的时候，我们把一个log4j2.xml的文件放到classpath下就可以让Log4j读取配置文件并按照我们的配置来输出日志。
-路径：src/log4j2.xml（Log4j需要配置文件在classpath根目录下才能自动加载）。
+路径：src/log4j2.xml
 虽然配置Log4j比较繁琐，但一旦配置完成，使用起来就非常方便。对于 src/log4j2.xml 配置文件，凡是INFO级别的日志，会自动输出到屏幕，
 而ERROR级别的日志，不但会输出到屏幕，还会同时输出到文件。并且，一旦日志文件达到指定大小（1MB），Log4j就会自动切割新的日志文件，并最多保留10份。
 
@@ -38,10 +38,10 @@ log4j-jcl-2.25.3.jar
 因为Commons Logging会自动发现并使用Log4j，所以，不需要改动任何代码，就可以得到Log4j的日志输出。
 
 在 learn-java 目录下执行编译：
-javac -d bin -cp "libs/commons-logging-1.3.5.jar:libs/log4j/*:src" src/com/liufan/learn/Main.java
+$ javac -d bin -cp "libs/commons-logging-1.3.5.jar:libs/slf4j-api-2.0.9.jar:libs/log4j/*:libs/logback/*:src" src/com/liufan/learn/Main.java
 
 编译成功后执行：
-java -cp "bin:libs/commons-logging-1.3.5.jar:libs/log4j/*:src" com.liufan.learn.Main
+$ java -cp "bin:libs/commons-logging-1.3.5.jar:libs/slf4j-api-2.0.9.jar:libs/log4j/*:libs/logback/*:src" com.liufan.learn.Main
 
 如果需要清理编译生成的 bin 目录，可以使用以下命令：
 $ rm -rf bin
@@ -60,7 +60,7 @@ import org.apache.commons.logging.LogFactory;
  * @see CommonsLogging
  */
 public final class Log4j {
-    public static final Log log = LogFactory.getLog(Log4j.class);
+    private static final Log log = LogFactory.getLog(Log4j.class);
     public static void practice() {
         log.info("Log4j info message");
         /*

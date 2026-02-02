@@ -9,10 +9,10 @@ Commons Loggin自动搜索并使用Log4j（Log4j是另一个流行的日志系�
 https://commons.apache.org/proper/commons-logging/download_logging.cgi
 
 下载后解压，找到commons-logging-1.3.5.jar这个文件，再把文件放到 libs 目录下。然后在 learn-java 目录下执行编译：
-$ javac -d bin -cp libs/commons-logging-1.3.5.jar:src src/com/liufan/learn/Main.java
+$ javac -d bin -cp "libs/commons-logging-1.3.5.jar:libs/slf4j-api-2.0.9.jar:libs/log4j/*:libs/logback/*:src" src/com/liufan/learn/Main.java
 
 编译成功后执行：
-$ java -cp bin:libs/commons-logging-1.3.5.jar com.liufan.learn.Main
+$ java -cp "bin:libs/commons-logging-1.3.5.jar:libs/slf4j-api-2.0.9.jar:libs/log4j/*:libs/logback/*:src" com.liufan.learn.Main
 
 如果需要清理编译生成的 bin 目录，可以使用以下命令：
 $ rm -rf bin

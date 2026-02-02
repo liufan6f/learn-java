@@ -33,6 +33,7 @@ import com.liufan.learn.processcontrol.LearnSwitch;
 import com.liufan.learn.processcontrol.LearnWhile;
 import com.liufan.learn.processcontrol.LearnFor;
 import com.liufan.learn.processcontrol.Loop;
+import com.liufan.learn.reflection.Reflection;
 
 /**
  * 一个 Java 源文件可以包含多个类的定义，但只能定义一个 public 类，且 public 类名必须与文件名一致
@@ -47,7 +48,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            LearnAssertion.practice();
+            Reflection.constructorMethod();
             return;
         }
 
@@ -177,5 +178,13 @@ public class Main {
         CommonsLogging.practice(); // 08.2、Commons Logging
         Log4j.practice();          // 08.2.1、Commons Logging 是日志接口，Log4j 是真正日志实现
         SLF4J.practice();          // 08.3、SLF4J 是日志接口，Logback 是真正日志实现
+
+        // 09、反射
+        Reflection.practiceClass();     // 09.1、反射（Reflection）—— 类名为 Class 的 class
+        Reflection.dynamicLoading();    // 09.2、反射（Reflection）—— 动态加载
+        Reflection.field();             // 09.3、反射（Reflection）—— 访问字段
+        Reflection.method();            // 09.4、反射（Reflection）—— 调用方法
+        Reflection.polymorphic();       // 09.4.1、反射（Reflection）—— 多态
+        Reflection.constructorMethod(); // 09.4.2、反射（Reflection）—— 构造方法
 	}
 }

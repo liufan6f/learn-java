@@ -245,6 +245,7 @@ public final class OOProgramming {
      * <p>
      * instanceof 操作符：instanceof 实际上判断一个变量所指向的实例是否是指定类型，或者这个类型的子类。如果一个引用变量为 null，那么对任何 instanceof 的判断都为 false。
      * @since 从 Java 14 开始，判断 instanceof 后，可以直接转型为指定变量，避免再次强制转型。
+     * @see com.liufan.learn.reflection.Reflection#practiceClass()
      */
     public static void downcasting() {
         /*

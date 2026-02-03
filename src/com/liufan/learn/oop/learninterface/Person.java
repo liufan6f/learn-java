@@ -53,6 +53,10 @@ Iterable it = coll;          // 向上转型为Iterable接口
              需要在相关类之间共享代码    需要定义不相关的类的契约
                 需要有状态的默认实现    需要多重继承的行为
 需要控制子类的访问权限（protected方法）   API 需要在未来扩展而不破坏现有实现
+
+我们来比较 Java 的 class 和 interface 的区别：
+1、可以实例化 class（非 abstract）；
+2、不能实例化 interface。
  */
 
 /**

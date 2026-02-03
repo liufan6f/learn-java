@@ -48,7 +48,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            Reflection.constructorMethod();
+            Reflection.dynamicProxy();
             return;
         }
 
@@ -186,5 +186,7 @@ public class Main {
         Reflection.method();            // 09.4、反射（Reflection）—— 调用方法
         Reflection.polymorphic();       // 09.4.1、反射（Reflection）—— 多态
         Reflection.constructorMethod(); // 09.4.2、反射（Reflection）—— 构造方法
+        Reflection.getExtends();        // 09.5、反射（Reflection）—— 获取继承关系
+        Reflection.dynamicProxy();      // 09.6、反射（Reflection）—— 动态代理
 	}
 }

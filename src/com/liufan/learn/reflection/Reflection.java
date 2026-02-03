@@ -22,9 +22,6 @@ String getFullName(Object obj) {
 所以，反射是为了解决在运行期，对某个实例一无所知的情况下，如何调用其方法。
  */
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationHandler;
@@ -40,7 +37,6 @@ import com.liufan.learn.reflection.dynamicproxy.Hello;
  * 通过 Class 实例获取 class 信息的方法称为反射（Reflection）。
  */
 public class Reflection {
-    private static final Log log = LogFactory.getLog(Reflection.class);
     /**
      * 类名为 Class 的 class
      * @see com.liufan.learn.oop.OOProgramming#downcasting()
@@ -105,8 +101,8 @@ public class Reflection {
         try {
             cls2 = Class.forName("java.lang.String"); // 方法三：通过Class.forName("完整类名")方法获取
         } catch (ClassNotFoundException e) {
-            log.info("got exception", e);
             cls2 = new String("Hello").getClass(); // 方法二：通过一个实例的getClass()方法获取
+            e.printStackTrace();
         }
         // 因为Class实例在JVM中是唯一的，所以，上述方法获取的Class实例是同一个实例。可以用==比较两个Class实例：
         System.out.println("cls1 == cls2，" + (cls1 == cls2));
@@ -134,7 +130,7 @@ public class Reflection {
             String s = (String) cls.newInstance();
             System.out.println(s);
         } catch (Exception e) {
-            log.info("got exception", e);
+            e.printStackTrace();
         }
         // 上述代码相当于 new String()，它的局限是：只能调用public的无参数构造方法。
         // 带参数的构造方法，或者非public的构造方法都无法通过Class.newInstance()被调用。
@@ -216,7 +212,7 @@ public class Reflection {
             // 获取private字段grade
             System.out.println(stdCls.getDeclaredField("grade"));
         } catch (NoSuchFieldException e) {
-            log.info("got exception", e);
+            e.printStackTrace();
         }
 
         /*
@@ -236,7 +232,7 @@ public class Reflection {
             System.out.println(Modifier.isPrivate(m));   // true
             System.out.println(Modifier.isStatic(m));    // false
         } catch (NoSuchFieldException e) {
-            log.info("got exception", e);
+            e.printStackTrace();
         }
 
         // 获取字段值
@@ -248,7 +244,7 @@ public class Reflection {
             Object value = f.get(p);
             System.out.println(value);
         } catch (Exception e) {
-            log.info("got exception", e);
+            e.printStackTrace();
         }
         /*
         ⚠️执行上述代码，如果不出意外，会得到一个IllegalAccessException，这是因为name被定义为一个private字段，
@@ -272,7 +268,7 @@ public class Reflection {
             f.set(p, "Jerry");
             System.out.println(p.getName()); // "Jerry"
         } catch (Exception e) {
-            log.info("got exception", e);
+            e.printStackTrace();
         }
     }
 
@@ -314,7 +310,7 @@ public class Reflection {
             System.out.println(stdCls.getDeclaredMethod("getGrade", int.class));
 
         } catch (NoSuchMethodException e) {
-            log.info("got exception", e);
+            e.printStackTrace();
         }
 
         // 调用方法
@@ -328,7 +324,7 @@ public class Reflection {
             m = String.class.getMethod("substring", int.class, int.class);
             System.out.println((String) m.invoke(s, 6, 8)); // "wo"
         } catch (Exception e) {
-            log.info("got exception", e);
+            e.printStackTrace();
         }
 
         // 调用静态方法
@@ -340,7 +336,7 @@ public class Reflection {
             // 打印调用结果:
             System.out.println(n);
         } catch (Exception e) {
-            log.info("got exception", e);
+            e.printStackTrace();
         }
 
         /*
@@ -359,7 +355,7 @@ public class Reflection {
             m.invoke(p, "Jerry");
             System.out.println(p.getName()); // "Jerry"
         } catch (Exception e) {
-            log.info("got exception", e);
+            e.printStackTrace();
         }
     }
 
@@ -373,7 +369,7 @@ public class Reflection {
             // 对Student实例调用hello方法
             System.out.println(m.invoke(new com.liufan.learn.reflection.method.polymorphic.Student())); // Student:hello
         } catch (Exception e) {
-            log.info("got exception", e);
+            e.printStackTrace();
         }
         /*
         运行上述代码，发现打印出的是Student:hello，因此，使用反射调用方法时，仍然遵循多态原则：即总是调用实际类型的覆写方法（如果存在）。
@@ -418,7 +414,7 @@ public class Reflection {
             Integer n2 = (Integer) cons2.newInstance("456");
             System.out.println(n2);
         } catch (Exception e) {
-            log.info("got exception", e);
+            e.printStackTrace();
         }
     }
 

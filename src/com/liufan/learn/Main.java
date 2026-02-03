@@ -1,5 +1,6 @@
 package com.liufan.learn;
 
+import com.liufan.learn.annotation.LearnAnnotation;
 import com.liufan.learn.basicdata.BasicData;
 import com.liufan.learn.basicdata.LearnInteger;
 import com.liufan.learn.basicdata.LearnFloat;
@@ -48,7 +49,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            Reflection.dynamicProxy();
+            LearnAnnotation.use();
             return;
         }
 
@@ -164,12 +165,12 @@ public class Main {
 
         // 07、异常
         LearnException.practice();            // 07.1、异常（Exception）
-        LearnException.multiCatch();          // 07.1.1、异常（Exception）—— 捕获多种异常（多 catch）
-        LearnException.finallyLearn();        // 07.1.2、异常（Exception）—— finally 语句
-        LearnException.transmit();            // 07.1.3、异常（Exception）的传播
-        LearnException.throwPractice();       // 07.1.4、异常（Exception）抛出（throw）
-        LearnException.suppressed();          // 07.1.5、异常（Exception）屏蔽
-        LearnException.custom();              // 07.1.6、异常（Exception）—— 自定义异常
+        LearnException.multiCatch();          // 07.1.1、捕获多种异常（多 catch）
+        LearnException.finallyLearn();        // 07.1.2、finally 语句
+        LearnException.transmit();            // 07.1.3、异常的传播
+        LearnException.throwPractice();       // 07.1.4、异常抛出（throw）
+        LearnException.suppressed();          // 07.1.5、异常屏蔽
+        LearnException.custom();              // 07.1.6、自定义异常
         LearnNullPointerException.practice(); // 07.1.7、空指针异常（NullPointerException）
         LearnAssertion.practice();            // 07.2、断言（Assertion）
 
@@ -184,9 +185,15 @@ public class Main {
         Reflection.dynamicLoading();    // 09.2、反射（Reflection）—— 动态加载
         Reflection.field();             // 09.3、反射（Reflection）—— 访问字段
         Reflection.method();            // 09.4、反射（Reflection）—— 调用方法
-        Reflection.polymorphic();       // 09.4.1、反射（Reflection）—— 多态
-        Reflection.constructorMethod(); // 09.4.2、反射（Reflection）—— 构造方法
-        Reflection.getExtends();        // 09.5、反射（Reflection）—— 获取继承关系
-        Reflection.dynamicProxy();      // 09.6、反射（Reflection）—— 动态代理
+        Reflection.polymorphic();       // 09.4.1、反射（Reflection）—— 调用方法（多态）
+        Reflection.constructorMethod(); // 09.5、反射（Reflection）—— 构造方法
+        Reflection.getExtends();        // 09.6、反射（Reflection）—— 获取继承关系
+        Reflection.dynamicProxy();      // 09.7、反射（Reflection）—— 动态代理
+
+        // 10、注解
+        LearnAnnotation.learn();  // 10、注解（Annotation）
+        LearnAnnotation.custom(); // 10.1、定义注解
+        LearnAnnotation.handle(); // 10.2、处理注解
+        LearnAnnotation.use();    // 10.3、使用注解
 	}
 }

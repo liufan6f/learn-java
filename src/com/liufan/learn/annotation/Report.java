@@ -37,7 +37,7 @@ import java.lang.annotation.Target;
  *     </li>
  *     <li><code>@Repeatable</code>，定义Annotation是否可重复，这个注解应用不是特别广泛。经过@Repeatable修饰后，
  *     在某个类型声明处，就可以添加多个@Report注解。</li>
- *     <li>{@link InheritedReport @Inherited}，使用@Inherited定义子类是否可继承父类定义的Annotation。@Inherited仅
+ *     <li>{@linkplain InheritedReport @Inherited}，使用@Inherited定义子类是否可继承父类定义的Annotation。@Inherited仅
  *     针对@Target(ElementType.TYPE)类型的annotation有效，并且仅针对class的继承，对interface的继承无效。</li>
  * </ol>
  * @see InheritedReport

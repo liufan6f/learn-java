@@ -24,6 +24,7 @@ import com.liufan.learn.coreclass.WrapperClass;
 import com.liufan.learn.exception.LearnAssertion;
 import com.liufan.learn.exception.LearnException;
 import com.liufan.learn.exception.LearnNullPointerException;
+import com.liufan.learn.generics.Generics;
 import com.liufan.learn.logging.CommonsLogging;
 import com.liufan.learn.logging.JDKLogging;
 import com.liufan.learn.logging.Log4j;
@@ -49,7 +50,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            LearnAnnotation.use();
+            Generics.upperBoundsWildcards();
             return;
         }
 
@@ -195,5 +196,18 @@ public class Main {
         LearnAnnotation.custom(); // 10.1、定义注解
         LearnAnnotation.handle(); // 10.2、处理注解
         LearnAnnotation.use();    // 10.3、使用注解
+
+        // 11、泛型
+        Generics.learn();                // 11、泛型类
+        Generics.upcasting();            // 11.1、向上转型
+        Generics.use();                  // 11.2、使用泛型
+        Generics.tInterface();           // 11.3、泛型接口
+        Generics.custom();               // 11.4、编写泛型类
+        Generics.staticMethod();         // 11.5、静态方法
+        Generics.customs();              // 11.6、多个泛型类型
+        Generics.typeErasure();          // 11.7、擦拭法（Type Erasure）
+        Generics.errorOverride();        // 11.7.1、擦拭法局限性 —— 不恰当的覆写方法
+        Generics.extendsPractice();      // 11.8、泛型继承
+        Generics.upperBoundsWildcards(); // 11.9、extends 通配符
 	}
 }

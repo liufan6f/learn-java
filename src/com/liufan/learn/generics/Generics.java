@@ -551,10 +551,10 @@ public class Generics {
         MyPair[] arr = new MyPair[2];
         MyPair<String>[] ps3 = (MyPair<String>[]) arr;
         ps3[0] = new MyPair<String>("a", "b");
-        arr[1] = new MyPair<String>("c", "d");
-//        arr[1] = new MyPair<Integer>(1, 2);
-//        MyPair<String> p = ps3[1]; // ClassCastException
-//        System.out.println(p.getFirst());
+//        arr[1] = new MyPair<String>("c", "d");
+        arr[1] = new MyPair<Integer>(1, 2);
+        MyPair<String> p = ps3[1]; // ClassCastException
+        System.out.println(p.getFirst());
         /*
         要安全地使用泛型数组，必须扔掉arr的引用：
             @SuppressWarnings("unchecked")

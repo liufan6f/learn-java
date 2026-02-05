@@ -50,7 +50,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            Generics.unboundedWildcardType();
+            Generics.reflect();
             return;
         }
 
@@ -214,5 +214,6 @@ public class Main {
         Generics.superWildcards();        // 11.10、super 通配符
         Generics.extendCompareSuper();    // 11.10.1、extends 和 super 通配符对比
         Generics.unboundedWildcardType(); // 11.11、无限定通配符
+        Generics.reflect();               // 11.12、泛型和反射
 	}
 }

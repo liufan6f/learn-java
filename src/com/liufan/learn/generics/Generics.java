@@ -5,6 +5,7 @@ import com.liufan.learn.generics.learnextends.IntPair;
 import com.liufan.learn.generics.learnextends.MyPair;
 import com.liufan.learn.generics.learnextends.MyPairHelper;
 
+import java.lang.reflect.Constructor;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -508,5 +509,73 @@ public class Generics {
         // 无限定通配符<?>有一个独特的特点，就是：MyPair<?>是所有MyPair<T>的超类：
         MyPair<?> p = n; // 安全地向上转型
         System.out.println(p.getFirst() + ", " + p.getLast());
+    }
+
+    /**
+     * 泛型和反射
+     */
+    public static void reflect() {
+        // Java的部分反射API也是泛型。例如：Class<T>就是泛型：
+        Class<String> clazz = String.class;
+        String str = null;
+        try {
+            str = clazz.newInstance();
+            System.out.println(str + ", End");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // 调用Class的getSuperclass()方法返回的Class类型是Class<? super T>：
+        Class<? super String> sup = clazz.getSuperclass();
+        System.out.println(sup.toString());
+
+        // 构造方法Constructor<T>也是泛型：
+        try {
+            Constructor<String> cons = clazz.getConstructor(char[].class);
+            System.out.println(cons.newInstance((Object) new char[] { 'h', 'e', 'l', 'l', 'o' }));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // 我们可以声明带泛型的数组，但不能用new操作符创建带泛型的数组：
+        MyPair<String>[] ps = null; // ok
+        // MyPair<String>[] ps2 = new MyPair<String>[2]; // compile error!
+        // 必须通过强制转型实现带泛型的数组：
+        @SuppressWarnings("unchecked")
+        MyPair<String>[] ps2 = (MyPair<String>[]) new MyPair[2];
+        /*
+        ⚠️使用泛型数组要特别小心，因为数组实际上在运行期没有泛型，编译器可以强制检查变量ps3，因为它的类型是泛型数组。
+          但是，编译器不会检查变量arr，因为它不是泛型数组。因为这两个变量实际上指向同一个数组，
+          所以，操作arr可能导致从ps3获取元素时报错，例如，以下代码演示了不安全地使用带泛型的数组：
+        */
+        MyPair[] arr = new MyPair[2];
+        MyPair<String>[] ps3 = (MyPair<String>[]) arr;
+        ps3[0] = new MyPair<String>("a", "b");
+        arr[1] = new MyPair<String>("c", "d");
+//        arr[1] = new MyPair<Integer>(1, 2);
+//        MyPair<String> p = ps3[1]; // ClassCastException
+//        System.out.println(p.getFirst());
+        /*
+        要安全地使用泛型数组，必须扔掉arr的引用：
+            @SuppressWarnings("unchecked")
+            MyPair<String>[] ps4 = (MyPair<String>[]) new MyPair[2];
+        由于拿不到原始数组的引用，就只能对泛型数组ps4进行操作，这种操作就是安全的。
+         */
+
+        // 带泛型的数组实际上是编译器的类型擦除：
+        System.out.println(ps3.getClass() == MyPair[].class); // true
+        String s1 = (String) arr[0].getFirst();
+        String s2 = ps3[0].getFirst();
+        System.out.println(s1 + " == " + s2);
+        // 所以我们不能直接创建泛型数组T[]，因为擦拭后代码变为Object[]，必须借助Class<T>来创建泛型数组：
+        MyPairHelper<String> m = new MyPairHelper<>();
+        System.out.println(Arrays.toString(m.createArray(String.class, 5)));
+        // 我们还可以利用可变参数创建泛型数组T[]：
+        String[] ss = MyPairHelper.asArray("one", "two", "three");
+        System.out.println(Arrays.toString(ss));
+        // ⚠️谨慎使用泛型可变参数：MyPairHelper.asArray(T...)似乎可以安全地创建一个泛型数组。但实际上，这种方法非常危险。
+        String[] firstTwo = MyPairHelper.pickTwo("one", "two", "three"); // ClassCastException
+        System.out.println(Arrays.toString(firstTwo));
+        // 如果仔细观察，可以发现编译器对所有可变泛型参数都会发出警告，除非确认完全没有问题，才可以用@SafeVarargs消除警告。
     }
 }

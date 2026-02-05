@@ -50,7 +50,7 @@ public class Main {
 
         boolean iWantToLearn = true;
         if (iWantToLearn) {
-            Generics.upperBoundsWildcards();
+            Generics.unboundedWildcardType();
             return;
         }
 
@@ -198,16 +198,21 @@ public class Main {
         LearnAnnotation.use();    // 10.3、使用注解
 
         // 11、泛型
-        Generics.learn();                // 11、泛型类
-        Generics.upcasting();            // 11.1、向上转型
-        Generics.use();                  // 11.2、使用泛型
-        Generics.tInterface();           // 11.3、泛型接口
-        Generics.custom();               // 11.4、编写泛型类
-        Generics.staticMethod();         // 11.5、静态方法
-        Generics.customs();              // 11.6、多个泛型类型
-        Generics.typeErasure();          // 11.7、擦拭法（Type Erasure）
-        Generics.errorOverride();        // 11.7.1、擦拭法局限性 —— 不恰当的覆写方法
-        Generics.extendsPractice();      // 11.8、泛型继承
-        Generics.upperBoundsWildcards(); // 11.9、extends 通配符
+        Generics.learn();                 // 11、泛型类
+        Generics.upcasting();             // 11.1、向上转型
+        Generics.use();                   // 11.2、使用泛型
+        Generics.tInterface();            // 11.3、泛型接口
+        Generics.custom();                // 11.4、编写泛型类
+        Generics.staticMethod();          // 11.5、静态方法
+        Generics.customs();               // 11.6、多个泛型类型
+        Generics.typeErasure();           // 11.7、擦拭法（Type Erasure）
+        Generics.errorOverride();         // 11.7.1、擦拭法局限性 —— 不恰当的覆写方法
+        Generics.extendsPractice();       // 11.8、泛型继承
+        Generics.upperBoundsWildcards();  // 11.9、extends 通配符
+        Generics.extendsFunction();       // 11.9.1、extends 通配符的作用
+        Generics.extendsT();              // 11.9.2、extends 限定 T 类型
+        Generics.superWildcards();        // 11.10、super 通配符
+        Generics.extendCompareSuper();    // 11.10.1、extends 和 super 通配符对比
+        Generics.unboundedWildcardType(); // 11.11、无限定通配符
 	}
 }

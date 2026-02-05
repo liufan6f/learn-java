@@ -1,8 +1,9 @@
 package com.liufan.learn.generics;
 
+import com.liufan.learn.generics.learnextends.ExtendsTPair;
 import com.liufan.learn.generics.learnextends.IntPair;
 import com.liufan.learn.generics.learnextends.MyPair;
-import com.liufan.learn.generics.learnextends.PairHelper;
+import com.liufan.learn.generics.learnextends.MyPairHelper;
 
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -117,7 +118,7 @@ public class Generics {
           因为Float是Number的子类。但是，ArrayList<Number>实际上和ArrayList<Integer>是同一个对象，
           也就是ArrayList<Integer>类型，它不可能接受Float类型， 所以在获取Integer的时候将产生ClassCastException。
           实际上，编译器为了避免这种错误，根本就不允许把ArrayList<Integer>转型为ArrayList<Number>。
-          （ArrayList<Integer>和ArrayList<Number>两者完全没有继承关系。）
+          （⚠️ArrayList<Integer>和ArrayList<Number>两者完全没有继承关系。）
 
         用一个图来表示泛型的继承关系，就是T不变时，可以向上转型，T本身不能向上转型：
           List<Integer>     ArrayList<Number>
@@ -221,35 +222,35 @@ public class Generics {
     public static void typeErasure() {
         /*
         例如，我们编写了一个泛型类Pair<T>，这是编译器看到的代码：
-        public class Pair<T> {
-            private T first;
-            private T last;
-            public Pair(T first, T last) {
-                this.first = first;
-                this.last = last;
+            public class Pair<T> {
+                private T first;
+                private T last;
+                public Pair(T first, T last) {
+                    this.first = first;
+                    this.last = last;
+                }
+                public T getFirst() {
+                    return first;
+                }
+                public T getLast() {
+                    return last;
+                }
             }
-            public T getFirst() {
-                return first;
-            }
-            public T getLast() {
-                return last;
-            }
-        }
         而虚拟机根本不知道泛型。这是虚拟机执行的代码：
-        public class Pair {
-            private Object first;
-            private Object last;
-            public Pair(Object first, Object last) {
-                this.first = first;
-                this.last = last;
+            public class Pair {
+                private Object first;
+                private Object last;
+                public Pair(Object first, Object last) {
+                    this.first = first;
+                    this.last = last;
+                }
+                public Object getFirst() {
+                    return first;
+                }
+                public Object getLast() {
+                    return last;
+                }
             }
-            public Object getFirst() {
-                return first;
-            }
-            public Object getLast() {
-                return last;
-            }
-        }
 
         因此，Java使用擦拭法实现泛型，导致了：
         1、编译器把类型<T>视为Object；
@@ -284,14 +285,14 @@ public class Generics {
            if (p2 instanceof Pair<String>) {} // Compile error
            原因和前面一样，并不存在Pair<String>.class，而是只有唯一的Pair.class
         4、不能实例化<T>类型：
-           public class Pair<T> {
-               private T first;
-               private T last;
-               public Pair() {
-                   first = new T(); // Compile error，擦拭后实际上变成了：first = new Object();
-                   last = new T();  // Compile error，擦拭后实际上变成了：last = new Object();
+               public class Pair<T> {
+                   private T first;
+                   private T last;
+                   public Pair() {
+                       first = new T(); // Compile error，擦拭后实际上变成了：first = new Object();
+                       last = new T();  // Compile error，擦拭后实际上变成了：last = new Object();
+                   }
                }
-           }
            这样一来，创建new Pair<String>()和创建new Pair<Integer>()就全部成了Object，显然编译器要阻止这种类型不对的代码。
            要实例化<T>类型，我们必须借助额外的Class<T>参数：
          */
@@ -328,7 +329,7 @@ public class Generics {
     public static void extendsPractice() {
         // 使用的时候，因为子类IntPair并没有泛型类型，所以，正常使用即可
         IntPair ip = new IntPair(1, 2);
-        System.out.println(ip.toString());
+        System.out.println(ip.getFirst() + ip.getLast());
 
         /*
         前面讲了，我们无法获取Pair<T>的T类型，即给定一个变量Pair<Integer> p，无法从p中获取到Integer类型。
@@ -340,7 +341,7 @@ public class Generics {
         Type t = clazz.getGenericSuperclass();
         if (t instanceof ParameterizedType pt) {
             Type[] types = pt.getActualTypeArguments(); // 可能有多个泛型类型
-            Type firstType = types[0]; // 取第一个泛型类型
+            Type firstType = types[0];                  // 取第一个泛型类型
             Class<?> typeClass = (Class<?>) firstType;
             System.out.println(typeClass); // Integer
         }
@@ -364,17 +365,17 @@ public class Generics {
      * <p>
      * 这种使用<code>&lt;? extends Number&gt;</code>的泛型定义称之为上界通配符（Upper Bounds Wildcards），
      * 即把泛型类型<code>&lt;T&gt;</code>的上界限定在Number了。
-     * @see PairHelper#add(MyPair)
+     * @see MyPairHelper#extendsAdd(MyPair)
      */
     public static void upperBoundsWildcards() {
-        // 我们前面已经讲到了泛型的继承关系：MyPair<Integer>MyPair<Number>的子类。
+        // 我们前面已经讲到了泛型的继承关系：ArrayList<Integer>不是ArrayList<Number>的子类。
         // 我们又写了一个静态方法，它接收的参数类型是MyPair<Number>
-        int sum = PairHelper.add(new MyPair<Number>(1, 2));
+        int sum = MyPairHelper.add(new MyPair<Number>(1, 2));
         System.out.println(sum);
         /*
         传入的类型是MyPair<Number>，实际参数类型是(Integer, Integer)
         既然实际参数是Integer类型，试试传入MyPair<Integer>：
-            int sum1 = PairHelper.add(new MyPair<Integer>(1, 2)); // compile error!
+            int sum1 = MyPairHelper.add(new MyPair<Integer>(1, 2)); // compile error!
         原因很明显，因为MyPair<Integer>不是MyPair<Number>的子类，因此，add(MyPair<Number>)不接受参数类型MyPair<Integer>。
         但是从add()方法的代码可知，传入MyPair<Integer>是完全符合内部代码的类型规范，因为语句：
             Number first = p.getFirst();
@@ -387,7 +388,125 @@ public class Generics {
         除了可以传入MyPair<Integer>类型，我们还可以传入MyPair<Double>类型，MyPair<BigDecimal>类型等等，因为Double和BigDecimal都是Number的子类。
          */
         MyPair<Integer> p = new MyPair<>(1, 2);
-        int sum1 = PairHelper.add(p);
-        System.out.println(sum1);
+        System.out.println(MyPairHelper.extendsAdd(p));
+    }
+
+    /**
+     * extends通配符的作用
+     * <p>
+     * 使用类似<code>&lt;? extends Number&gt;</code>通配符作为方法参数时表示：
+     * <ul>
+     *     <li>方法内部可以调用获取Number引用的方法，例如：<code>Number n = obj.getFirst();</code>；</li>
+     *     <li>方法内部无法调用传入Number引用的方法（null除外），例如：<code>obj.setFirst(Number n);</code>。</li>
+     * </ul>
+     * 即一句话总结：使用extends通配符表示可以读，不能写。
+     * @see MyPairHelper#sumOfList(List)
+     */
+    public static void extendsFunction() {
+        List<Integer> list = new ArrayList<>();
+        list.add(123);
+        list.add(456);
+        System.out.println(MyPairHelper.sumOfList(list));
+    }
+
+    /**
+     * extends限定T类型
+     */
+    public static void extendsT() {
+        ExtendsTPair<Integer> p = new ExtendsTPair<>(1, 2);
+        System.out.println(p.getFirst() + p.getLast());
+    }
+
+    /**
+     * super通配符
+     */
+    public static void superWildcards() {
+        // 我们前面已经讲到了泛型的继承关系：ArrayList<Integer>不是ArrayList<Number>的子类。
+        MyPair<Integer> p = new MyPair<>(1, 2);
+        MyPairHelper.set(p, 3, 4);
+        System.out.println(p.getFirst() + ", " + p.getLast());
+        /*
+        那么，考察上面的set方法：传入MyPair<Integer>是允许的，但是传入MyPair<Number>是不允许的。
+        但和extends通配符相反，这次，我们希望同时接受MyPair<Integer>，以及MyPair<Number>、MyPair<Object>类型
+        （Number和Object是Integer的父类，setFirst(Number)和setFirst(Object)实际上允许接受Integer类型）。
+        使用super通配符来改写这个方法：
+         */
+        MyPair<Number> n = new MyPair<>(5, 6);
+        MyPairHelper.superSet(n, 7, 8);
+        System.out.println(n.getFirst() + ", " + n.getLast());
+    }
+
+    /**
+     * extends和super通配符对比
+     */
+    public static void extendCompareSuper() {
+        /*
+        我们再回顾一下extends通配符。作为方法参数，<? extends T>类型和<? super T>类型的区别在于：
+        1、<? extends T>允许调用读方法 T get() 获取T的引用，但不允许调用写方法 set(T) 传入T的引用（传入null除外）；
+        2、<? super T>  允许调用写方法 set(T) 传入T的引用，但不允许调用读方法 T get() 获取T的引用（获取Object除外）。
+        一个是允许读不允许写，另一个是允许写不允许读。
+
+        我们来看Java标准库的Collections类定义的copy()方法：
+            public class Collections {
+                // 把src的每个元素复制到dest中:
+                public static <T> void copy(List<? super T> dest, List<? extends T> src) {
+                    for (int i=0; i<src.size(); i++) {
+                        T t = src.get(i);
+                        dest.add(t);
+
+                        // T t = dest.get(0); // compile error!
+                        // src.add(t);        // compile error!
+                    }
+                }
+            }
+        它的作用是把一个List的每个元素依次添加到另一个List中。它的第一个参数是List<? super T>，表示目标List，
+        第二个参数List<? extends T>，表示要复制的List。我们可以简单地用for循环实现复制。在for循环中，我们可以看到，
+        对于类型<? extends T>的变量src，我们可以安全地获取类型T的引用，而对于类型<? super T>的变量dest，我们可以安全地传入T的引用。
+
+        这个copy()方法的定义就完美地展示了extends和super的意图：
+        1、copy()方法内部不会读取dest，因为不能调用dest.get()来获取T的引用；
+        2、copy()方法内部也不会修改src，因为不能调用src.add(T)。
+        这是由编译器检查来实现的。如果在方法代码中意外修改了src，或者意外读取了dest，就会导致一个编译错误。
+
+        这个copy()方法的另一个好处是可以安全地把一个List<Integer>添加到List<Number>，但是无法反过来添加：
+            // copy List<Integer> to List<Number> ok:
+            List<Number> numList = ...;
+            List<Integer> intList = ...;
+            Collections.copy(numList, intList);
+
+            // ERROR: cannot copy List<Number> to List<Integer>:
+            Collections.copy(intList, numList);
+         */
+        System.out.println("extends是允许读不允许写，super是允许写不允许读。");
+
+        /*
+        PECS原则
+        何时使用extends，何时使用super？为了便于记忆，我们可以用PECS原则：Producer Extends Consumer Super。
+        即：如果需要返回T，它是生产者（Producer），要使用extends通配符；如果需要写入T，它是消费者（Consumer），要使用super通配符。
+        还是以Collections的copy()方法为例：
+        需要返回T的src是生产者，因此声明为List<? extends T>，需要写入T的dest是消费者，因此声明为List<? super T>。
+         */
+        System.out.println("PECS原则：Producer Extends Consumer Super");
+    }
+
+    /**
+     * 无限定通配符
+     */
+    public static void unboundedWildcardType() {
+        /*
+        Java的泛型还允许使用无限定通配符（Unbounded Wildcard Type），即只定义一个?。
+        因为<?>通配符既没有extends，也没有super，因此：
+        1、不允许调用 set(T) 方法并传入引用（null除外）；
+        2、不允许调用 T get() 方法并获取T引用（只能获取Object引用）。
+        换句话说，既不能读，也不能写，那只能做一些null判断：
+         */
+        MyPair<Number> n = new MyPair<>(5, 6);
+        System.out.println(MyPairHelper.isNull(n));
+        // 大多数情况下，可以引入泛型参数<T>消除<?>通配符：
+        System.out.println(MyPairHelper.isNewNull(n));
+
+        // 无限定通配符<?>有一个独特的特点，就是：MyPair<?>是所有MyPair<T>的超类：
+        MyPair<?> p = n; // 安全地向上转型
+        System.out.println(p.getFirst() + ", " + p.getLast());
     }
 }

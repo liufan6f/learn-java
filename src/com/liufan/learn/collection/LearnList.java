@@ -65,4 +65,5 @@ HEAD ──▶│ A │ ●─┼──▶│ B │ ●─┼──▶│ C │ 
  * @see com.liufan.learn.classtype.LearnArray
  */
 public class LearnList extends LearnCollection {
+    // TODO: 20260226 学习List接口（https://liaoxuefeng.com/books/java/collection/list/index.html）
 }
